@@ -142,13 +142,21 @@ trajetória do CM, as posições dos pés e durações dos passos.
 \label{FIG:darwinchape}
 \end{figure}
 
-\textcolor{blue}{De modo geral, o movimento periódico da caminhada é resolvido em termos de controle com uma sequência de algoritmos que formam uma malha de controle fechada. Uma visão geral da arquitetura da malha de controle pode ser vista na Figura \ref{FIG: doc manga}. Tem-se como entrada um vetor de velocidade omnidirecional desejado, para ser gerado no \textit{Step Planner}, planejador de passos, as posições e tempos da marcha. Com o planejamento definido, utiliza-se um algoritmo gerador de trajetórias baseado na posição do ZMP de acordo com o pé de apoio (bloco \textit{ZMP Trajectory Generator)}. Planeja-se ainda a trajetória do centro de massa (com retorno de sensores sobre posição, velocidade e aceleração para o controle) e do pé "flutuante", aquele não em contato com o solo no passo, a fim de definir totalmente as trajetórias a ser cumpridas.}
+\textcolor{blue}{De modo geral, o movimento periódico da caminhada é resolvido em termos de controle com uma sequência de algoritmos que formam uma malha de controle fechada. Uma visão geral da arquitetura da malha de controle pode ser vista na Figura \ref{FIG: doc manga}. Tem-se como entrada um vetor de velocidade omnidirecional desejado, para ser gerado no planejador de passos as posições e tempos da marcha. Com o planejamento definido, utiliza-se um algoritmo gerador de trajetórias baseado na posição do ZMP de acordo com o pé de apoio (Gerador de Trajetórias ZMP, na Figura \ref{FIG: doc manga}). Planeja-se ainda a trajetória do centro de massa (com retorno de sensores sobre posição, velocidade e aceleração para o controle) e do pé de balanço, aquele não em contato com o solo no passo, a fim de definir totalmente as trajetórias a ser cumpridas.}
 
-\textcolor{blue}{Solucionado o movimento desejado, entra o algoritmo \textit{Inverse Kinematics Solver}, solucionador inverso de cinemática, que orienta as posições desejadas nos membros e juntas do robô (orientados por servo-motores). Além de resolver a cinemática, fazem-se necessários ainda dois passos na malha de controle, representados por \textit{Gravity Compensator}, compensador de gravidade, e \textit{Torso Orientation Compensator}, compensador de orientação do torso.}
+\textcolor{blue}{Solucionado o movimento desejado, entra o algoritmo Solucionador de Cinemática Inversa, que orienta as posições desejadas nos membros e juntas do robô (orientados por servo-motores). Além de resolver a cinemática, fazem-se necessários ainda dois passos na malha de controle, representados pelo compensador de gravidade e pelo compensador de orientação do torso.}
 
 \textcolor{blue}{A necessidade do compensador de gravidade surge da atuação de torques indesejados nas juntas do robô causados pela aceleração da gravidade e é implementado em momentos de suporte único no passo (isto é, quando o robô tem uma perna suporte e outra livre de contato com o solo). Já o compensador de orientação do torso surge principalmente de erros de medidas ou de perturbações externas e é implementado com um algoritmo que observa a posição do torso em cada passo utilizando Filtro de Kalman para o tratamento dos dados oriundos dos sensores.} \textcolor{green}{encher de referências.}
 
- Essas formulações demonstraram expandir consideravelmente a margem de tolerância e perturbações do robô (i.e. o robô é capaz de tomar empurrões muito mais fortes sem cair) em comparação a uma formulação do estado da arte que trabalha com duração fixa de passo \cite{max30}. Essa característica foi comprovada tanto em simulações simplificadas usando o consagrado modelo de pêndulo invertido \cite{kajita2001} para modelar o robô, quanto no simulador de robótica Gazebo, onde foi utilizado um modelo de simulação realista do robô humanoide Robotis OP2, desenvolvido pelo grupo a partir de dados do fabricante e de resultados de ensaios com os atuadores \cite{max27}. 
+Essas formulações demonstraram expandir consideravelmente a margem de tolerância e perturbações do robô (i.e. o robô é capaz de tomar empurrões muito mais fortes sem cair) em comparação a uma formulação do estado da arte que trabalha com duração fixa de passo \cite{max30}. Essa característica foi comprovada tanto em simulações simplificadas usando o consagrado modelo de pêndulo invertido \cite{kajita2001} para modelar o robô, quanto no simulador de robótica Gazebo, onde foi utilizado um modelo de simulação realista do robô humanoide Robotis OP2, desenvolvido pelo grupo a partir de dados do fabricante e de resultados de ensaios com os atuadores \cite{max27}. 
+ 
+\begin{figure} 
+	\centering
+	\includegraphics[width=0.6\textwidth]{walking_engine_overview.png}
+	\caption{\textcolor{blue}{Protótipo do pé protético desenvolvido pelo LBRSC.}}
+	\label{FIG: doc manga}
+%\label{Rotulo}
+\end{figure} 
  
 %\textcolor{red}{Uma desvantagem da caminhada desenvolvida pelo LAB-SCA nos robôs humanoides Robotis OP2 e Chape (robô humanóide projetado pelo LAB-SCA) mostrados nas figuras 1(a) e 1(b), respectivamente, é o alto gasto energético. Devido aos pés serem chapas retangulares e sem nenhum mecanismo de amortecimento, gerando muita vibração estrutural. }
 
@@ -346,8 +354,6 @@ Pretende-se a publicação nas seguintes conferências:
    \item International Congress of Mechanical Engineering (COBEM);
    \item Congresso Nacional de Engenharia Mecânica (CONEM);
 
-\item International Symposium on Dynamic Problems of Mechanics (DINAME);
-
 \item Ibero Latin American Congress on Computational Methods in Engineering (CILAMCE);
 
 \item Latin Americam Robotics Symposium (LARS);
@@ -359,39 +365,30 @@ Pretende-se a publicação nas seguintes conferências:
 \item International Conference on Intelligent Robots and Systems(IROS).
  \end{itemize}
 
-Pretende-se publicação nos seguintes periódicos:
-\begin{itemize}
-\item Journal Of Mechanisms and Robotics (Qualis B1 engenharias III);
-
-\item Journal of Intelligent \& Robotics Systems (Qualis B1 engenharias III);
-
-\item IEEE/ASME Transactions on Mechatronics (Qualis A1 engenharias III).
- \end{itemize}
-%\newpage
 
 \section{Plano de trabalho}
 
-A.	Revisão bibliográfica;
+A.	\textcolor{blue}{Estudo introdutório a matéria de controle;}
 
-B.	Utilizar a técnica de cinemetria nos robôs do LAB-SCA para refinamento de parâmetros;
+B.	\textcolor{blue}{Estudo sobre algoritmos de otimização;}
 
-C.	Elaboração de algoritmo que permite rolamento do pé;
+C.	\textcolor{blue}{Estudo sobre a caminhada do robô humanoide;}
 
-D.	Verificação em simulação da proposta de algoritmo de caminhada;
+D.	\textcolor{blue}{Estudo detalhado do código do robô humanoide relacionado ao seu caminhar, organização do código e início dos planos de otimização;}
 
-E.	Projeto mecânico do pé e fabricação;
+E.	\textcolor{blue}{Confecção do primeiro relatório científico}
 
-F.	Implementação do algoritmo no robô;
+F.	\textcolor{blue}{Continuação do processo de otimização;}
 
-G.	Cinemetria com o novo pé;
+G.	\textcolor{blue}{Testes no robô real seguidos de aquisição de dados;}
 
-H.	Redação /defesa do exame de qualificação;
+H.	\textcolor{blue}{Fim do processo de otimização seguido da comparação de resultados do antes e pós processo de modificação e otimização;}
 
-I.	Instrumentação;
+I.	\textcolor{blue}{Implementação definitiva do novo código;}
 
-J.	Testes e análises de resultados;
+J.	\textcolor{blue}{Ajuste na malha de controle para melhor desempenho;}
 
-K.	Redação/defesa da tese.
+K.	\textcolor{blue}{Confecção do segundo relatório científico.}
 
 
 \begin{table}[h!]
@@ -400,12 +397,12 @@ K.	Redação/defesa da tese.
 	\label{tab:Cronograma}
 		\begin{tabular}{|c|C|C|C|C|C|C|C|C|C|C|C|}
 		\hline
-		\multirow{2}{*}{Semestre} &  \multicolumn{11}{c|}{Atividade} \\
+		\multirow{2}{*}{\textcolor{blue}{Bimestre}} &  \multicolumn{11}{c|}{Atividade} \\
 		 & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{B} & \multicolumn{1}{c}{C} & \multicolumn{1}{c}{D} & \multicolumn{1}{c}{E} & \multicolumn{1}{c}{F} & \multicolumn{1}{c}{G} & \multicolumn{1}{c}{H} & \multicolumn{1}{c}{I} & \multicolumn{1}{c}{J} & K 	\\
 		  \cline{2-12}
 			1 & \cellcolor{gray!50} & \cellcolor{gray!50} &  &  &  &	 &  &  &  &  & \\
 			\cline{2-12}
-			2 &  & \cellcolor{gray!50} & \cellcolor{gray!50} & \cellcolor{gray!50} &  &	&  &  &  &  & \\
+			2 &  & \cellcolor{gray!50} & \cellcolor{gray!50} & \cellcolor{gray!50} & \cellcolor{gray!50} &	&  &  &  &  & \\
 			\cline{2-12}
 			3 &  &  &  &  & \cellcolor{gray!50} & 	&  &  &  &  & \\
 			\cline{2-12}
@@ -427,21 +424,23 @@ Para a excução do projeto proposto são necessários os seguintes recursos mat
 
 1.	O robô humanoide (Robotis OP2) comprado pelo  projeto FAPESP 2016/03647-3, utilizado na tese de doutorado \cite{tesemarcos};
 
-2.	Acesso ao LAB-SCA (Laboratório de Sistemas de Controle autônomos), o qual contribuirá com equipamentos de confecção.
+2.	\textcolor{blue}{O robô humanoide (ITAndroids Chape 1ª geração e 2ª geração), desenvolvido no LAB-SCA (Laboratório de Sistemas de Controle autônomos)}.
 
-3.	 Acesso ao LBRSC (Laboratório de Biomecânica, Robótica e Simulação Computacional), o qual contribuirá com a Cinemetria.
+3.	 Acesso ao LAB-SCA (Laboratório de Sistemas de Controle autônomos), o qual contribuirá com equipamentos de confecção.
 
-4.	Licença do software Matlab, obitodo pelo projeto FAPESP 2016/03647-3.
+4.	Licença do software Matlab, \textcolor{blue}{licença de acesso RoboCup 2019}.
 
-5.	Modelo de simulação do Darwin desenvolvido na tese de doutorado dentro do contexto do projeto FAPESP 2016/03647-3.
-
-6.	Biblioteca com acesso eletrônico aos periódicos de interesse nas áreas da proposta.
+5.	\textcolor{red}{Modelo de simulação do Darwin desenvolvido na tese de doutorado dentro do contexto do projeto FAPESP 2016/03647-3.} \textcolor{green}{não sei}.
 
 
+\textcolor{blue}{Inicialmente, será feito estudo da Literatura para aprender sobre teoria de controle e sobre as técnicas utilizadas no laboratório LAB-SCA para estabilização de caminhada. Então, será estudado o código para projeto das malhas de controle de estabilização da caminhada.} 
 
-A metodologia seguida neste trabalho consiste em uma primeira etapa de experimentos para identificação de parâmetros de um robô Robotis OP2, para o qual existe um modelo de caminhada em um simulador.
+\textcolor{blue}{Com isso, planejar-se-á as modificações necessárias para adaptar o algoritmo de estabilização para o robô Chape 2ª Geração. Por fim, serão feitos experimentos para validar a estabilização implementada e ajustes para melhorar o desempenho da caminhada do robô.}
 
-Após isso propõe-se um novo modelo de caminhada que considerará o rolamento, com a construção de um novo pé. Posteriormente, serão feitas simulações dinâmicas tanto para validação do dispositivo construído quanto para a caminhada. Por fim, a implementação desse dispositivo no humanoide Robotis OP2.
+\newpage
+%\ŧextcolor{red}{A metodologia seguida neste trabalho consiste em uma primeira etapa de experimentos para identificação de parâmetros de um robô Robotis OP2, para o qual existe um modelo de caminhada em um simulador.}
+
+%\ŧextcolor{red}{Após isso propõe-se um novo modelo de caminhada que considerará o rolamento, com a construção de um novo pé. Posteriormente, serão feitas simulações dinâmicas tanto para validação do dispositivo construído quanto para a caminhada. Por fim, a implementação desse dispositivo no humanoide Robotis OP2.}
 
 
 
