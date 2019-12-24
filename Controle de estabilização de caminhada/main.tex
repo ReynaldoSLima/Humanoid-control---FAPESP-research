@@ -276,43 +276,23 @@ em que \( \ddot{z}_{r,CM}[k] \) é a trajetória prescrita para a altura do CM. 
 
 \subsection{Estratégias de Estabilização de Caminhada}
 
-Para uma análise de energia que considera a nova forma geométrica dos pés robótico, propõe-se usar o método proposto em  \cite{adamczyk2013}. Na figura 3, é exemplificada o efeito de variação de raio $\rho$ e comprimento l de um pé em forma de  arco, em um modelo de caminhada simples. 
+Para compensar os erros introduzidos pelo descasamento dinâmico entre o modelo de pêndulo invertido e a dinâmica completa do robô, usa-se estratégias de estabilização. Da experiência do LAB-SCA com robôs humanoides, um robô de pequena estatura como o Robotis OP2 ou o Chape é capaz de andar mesmo sem estabilização, mas seu desempenho é degradado. Entretanto, pesquisadores que trabalham com humanoides maiores reportam que estratégias de estabilização são fundamentais para que o robô seja capaz de caminhar \cite{naveau2017}.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics{centromassa}
-\caption{ Modelo de caminhada.}
-\label{Rotulo}
-\end{figure}
+Atualmente, o Chape 1ª Geração conta com duas estratégias principais, conforme evidenciado nos blocos ``Compensador de Gravidade'' e ``Compensador de Orientação de Torso" apresentados na Figura \ref{FIG: doc manga}. A gravidade cria torques indesejados nas juntas do robô, o que impede que os controladores de posição dos servomotores atinjam suas referências. Entretanto, é possível calcular os valores desses torques usando o modelo de massa do robô e compensá-los através de \emph{feedforward}. O modelo de massa do robô pode ser obtido através de informações de modelos de \emph{computer-aided design} (CAD) ou por identificação de sistemas (conforme feito em um trabalho no LAB-SCA \cite{silva2019b}). Além disso, como os servomotores do robô recebem comandos de posição, é necessário conhecer a dinâmica dos servomotores, que foi obtida por identificação em outro trabalho do laboratório \cite{max27}.
 
+O modelo de pêndulo invertido não descreve como se deve controlar a orientação do robô, assim uma prática comum é manter o torso reto em rolamento (\emph{roll}) e arfagem (\emph{pitch}) durante a caminhada. Apesar do compensador de gravidade, ainda surgem erros de orientação do torso. Além de inevitáveis erros no modelo de massa, o que impede uma compensação perfeita da gravidade, efeitos de perturbações (por conta de empurrões e desníveis no solo) e de dinâmica dos atuadores contribuem para erros de orientação.
 
-Na figura 3 para a transição dos passos é considerado como trabalho positivo o impulso e trabalho negativo a colisão, para redirecionar a velocidade CM. O redirecionamento (representado pelo ângulo $\delta$) é determinado pela distância entre os pontos de contato do solo para os dois arcos.
+Assim, o compensador de orientação implementado no Chape usa controladores P+V desacoplados para os canais de rolagem e arfagem. Para estimar a orientação do torso, usa-se um filtro de Kalman estendido (EKF) que funde informações do acelerômetro e do girômetro da unidade inercial presente no torso. Ao invés de derivar as estimativas de ângulo, usa-se medidas de velocidade angular do girômetro para evitar amplificação de ruído. As seguintes juntas são consideradas nesse controlador: coxa-arfagem, joelho-arfagem, calcanhar-arfagem, coxa-rolamento e calcanhar-rolagem. Como nosso robô é controlado por posição, o controlador comanda deslocamento de posição:
+\begin{align}
+\Delta \theta_{hr,o} = -K_{p,hr} \left( \phi_d - \phi \right) - K_{v,hr} p, \\
+\Delta \theta_{ar,o} = -K_{p,ar} \left( \phi_d - \phi \right) - K_{v,ar} p, \\
+\Delta \theta_{hp,o} = -K_{p,hp} \left( \theta_d - \theta \right) - K_{v,hp} q, \\
+\Delta \theta_{kp,o} = -K_{p,kp} \left( \theta_d - \theta \right) - K_{v,kp} q, \\
+\Delta \theta_{ap,o} = -K_{p,ap} \left( \theta_d - \theta \right) - K_{v,ap} q,
+\end{align}
+em que \( \phi_d \) e \( \theta_d \) são ângulos desejados de rolamento e arfagem, respectivamente; \( \phi \) e \( \theta \) são ângulos atuais de rolamento e arfagem, respectivamente; \( p \) e \( q \) são velocidades angulares de rolamento e arfagem, respectivamente; nos índices, \( hr \), \( ar \), \( hp \), \( kp \) e \( ap \) referem-se a coxa-rolamento, calcanhar-rolamento, coxa-arfagem, joelho-arfagem e calcanhar-arfagem, respectivamente; \( K_{p,*} \) e \( K_{v,*} \) representam ganhos proporcionais e derivativos de cada junta, respectivamente; finalmente, \( \Delta \theta_{*,o} \) representa o comando de deslocamento (\emph{offset}) de cada junta.
 
-Para um valor maior de redirecionamento do CM é necessário mais trabalho (mais energia). A mudança de velocidade devido ao impulso e a colisão são mostrados como  $\Delta v_{PO}$ e $\Delta v_{CO}$, respectivamente. 
-
-Mantendo constante o comprimento do  passo, determina-se tanto o ângulo entre as pernas (2$\alpha$) quanto o ângulo mínimo  de redirecionamento ($\delta$). Os impulsos redirecionam o CM com uma  velocidade de pré transição ($ v_{pre}$) para a velocidade de meio transição ($v_{mid}$), já a colisão redireciona o CM com uma velocidade de pós transição ($v_{post}$). 
-
-Sendo o comprimento do pé dado pela relação relação l=2$\rho$sin($\lambda$/2) , onde $\lambda$ é o ângulo do arco do pé. Para encontrar  $\delta$, usa-se a relação:
-
-\begin{equation}
-\tan\frac{\delta }{2}=\frac{\rho\sin (\alpha-\frac{\lambda}{2})+(1-\rho)sin\alpha}{\rho\cos (\alpha-\frac{\lambda}{2})+(1-\rho)\cos\alpha }\approx\alpha-\frac{l}{2}
-\end{equation}
-
-Para a marcha se manter estável a magnitude do trabalho da colisão deve ser igual a do trabalho do impulso, encontrado por:
-
-\begin{equation}
-W=\frac{1}{2}M(v_{mid})^2-\frac{1}{2}M(v_{post})^2=\frac{1}{2}M(v_{post})^2\tan^2\frac{\delta}{2}
-\end{equation}
-
-%Portanto, o módulo do trabalho tanto na colisão quanto no impulso é:
-
-\begin{equation}
-W\approx\frac{1}{2}M(v_{post})^2(\alpha-\frac{l}{2})^2
-\end{equation}
-
-
-
-
+Para determinar os ganhos, modelou-se o robô em suporte simples como dois ``manipuladores robóticos'' desacoplados, um para o plano sagital (arfagem) e outro para o coronal (rolamento). As equações dinâmicas de manipuladores robóticos de três e dois elos foram determinadas usando Mecânica Lagrageana, uma abordagem comum na literatura de manipuladores robóticos \cite{craig1986}. Esses modelos foram então linearizados em torno de uma postura nominal (robô no meio da fase de duplo suporte com velocidade de caminhada zero) e foi projeto um controlador SISO para cada junta de modo a atingir uma banda passante e uma margem de fase desejadas. Para maiores detalhes sobre as estratégias de estabilização descritas aqui, recomenda-se verificar a tese de doutorado do professor Marcos Maximo \cite{tesemarcos}.
 
 \newpage
 
