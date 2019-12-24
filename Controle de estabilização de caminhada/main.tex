@@ -201,13 +201,11 @@ O embasamamento matemático dos métodos propostos será apresentado a seguir:
 
 \subsection{Preview Control of ZMP}
 
-O \emph{Preview Control of Zero-Moment Point} é um método seminalalítico de controle de caminhada bípede baseado em \emph{Model Predictive Control} (MPC) \cite{kajita2003}. Não apenas esse método foi implementado em vários robôs humanoides \cite{yi2016}, mas  também serve de base para técnicas no estado da arte \cite{tesemarcos,herdt2010}. Além disso, o LAB-SCA tem experiência no uso desse tipo de algoritmo de caminhada \cite{max22,tesemarcos}, de modo que o \emph{Preview Control of ZMP} será um ponto de partida para esse trabalho. Nessa subseção, apresentar-se-á uma introdução teórica a esse método.
+O \emph{Preview Control of Zero-Moment Point} é um método de controle de caminhada bípede baseado em Controle Preditivo Baseado em Modelo (\emph{Model Predictive Control} -- MPC) \cite{kajita2003}. Não apenas esse método foi implementado em vários robôs humanoides \cite{yi2016}, mas  também serve de base para técnicas no estado da arte \cite{tesemarcos,herdt2010}. Além disso, o LAB-SCA tem experiência no uso desse tipo de algoritmo de caminhada \cite{max22,tesemarcos}, de modo que o \emph{Preview Control of ZMP} será um ponto de partida para esse trabalho. Nessa subseção, apresentar-se-á uma introdução teórica a esse método.
 
-A inspiração para o uso de MPC advém do fato de que, durante a caminhada, mudanças instantâneas ocorrem no polígono de suporte devido aos pés do robô fazerem e quebrarem contato com o chão. Com isso, é interessante que o controlador de caminhada anticipe a referência futura de ZMP ao mover o ZMP antes que uma mudança repentina de polígono de suporte aconteça.
+MPC é uma abordagem moderna de controle ótimo em que o comportamento futuro do sistema dinâmico é previsto através da integração de um modelo matemático. A inspiração para o uso de MPC advém do fato de que, durante a caminhada, mudanças instantâneas ocorrem no polígono de suporte devido aos pés do robô fazerem e quebrarem contato com o chão. Com isso, é interessante que o controlador de caminhada anticipe a referência futura de ZMP ao mover o ZMP antes que uma mudança repentina de polígono de suporte aconteça.
 
-Controle Preditivo Baseado em Modelo (MPC) é uma abordagem moderna de controle ótimo em que o comportamento futuro do sistema dinâmico é previsto através da integração de um modelo matemático. A seguir, deduz-se as equações apenas para o eixo de coordenadas \( x \), dado que estendê-las para o eixo \( y \) é trivial.
-
-Primeiramente, considere controle direto sobre a sobre-aceleração (i.e. derivada da aceleração) do CM do robô  \( \dddot{x} \), então a evolução temporal do CM é ditada pela Cinemática. Assumindo-se a hipótese de segurador de ordem zero sobre um passo de tempo de duração \( T \), pode-se obter o seguinte modelo de tempo discreto para a dinâmica do CM:
+A seguir, deduz-se as equações apenas para o eixo de coordenadas \( x \), dado que estendê-las para o eixo \( y \) é trivial. Primeiramente, considere controle direto sobre a sobre-aceleração (i.e. derivada da aceleração) do CM do robô  \( \dddot{x} \), então a evolução temporal do CM é ditada por cinemática. Assumindo-se a hipótese de segurador de ordem zero sobre um passo de tempo de duração \( T \), pode-se obter o seguinte modelo de tempo discreto para a dinâmica do CM:
 \begin{equation}
 \mathrm{\mathbf{x}}[k+1] = \begin{bmatrix}
 1 & T & T^2/2 \\ 0 & 1 & T \\ 0 & 0 & 1
@@ -264,19 +262,19 @@ em que os pesos \( \alpha \) e \( \gamma \) penalizam o uso de sobre-aceleraçã
 
 Para o máximo de estabilidade, o artigo original sugere escolher uma referência de ZMP poligonal que mantém o ZMP no meio do pé de suporte durante suporte simples e move o ZMP entre os pés durante suporte duplo \cite{kajita2003}. A hipótese implícita aqui é que o rastreio de ZMP é bom o suficiente para manter o ZMP sempre dentro do polígono de suporte, como exigido pelo critério de estabilidade de ZMP \cite{vukobratovic2004}. Porém, outro tipo de referência é mais interessante caso deseje-se reduzir consumo energético, conforme já explorado por pesquisadores do LAB-SCA \cite{max22}.
 
-O algoritmo é usado em conjunto com um planejador de passos que escolhe as posições dos pés de acordo com um objetivo de alto nível. A trajetória de sobre-aceleração é obtida através da solução do problema de otimização definido pela função de custo \eqref{eq:optimization_preview}, o qual possui solução analítica:
+O algoritmo de \emph{Preview Control of ZMP} é usado em conjunto com um planejador de passos que escolhe as posições dos pés de acordo com um objetivo de alto nível. A trajetória de sobre-aceleração é obtida através da solução do problema de otimização definido pela função de custo \eqref{eq:optimization_preview}, o qual possui solução analítica:
 \begin{equation}
 \dddot{\mathrm{\mathbf{X}}}[k] = \left( \mathrm{\mathbf{P}}^T_{zu} \mathrm{\mathbf{P}}_{zu} + \frac{\alpha}{\gamma} \mathrm{\mathbf{I}}_N \right)^{-1} \mathrm{\mathbf{P}}^T_{zu} \left( \mathrm{\mathbf{Z}}_{r,x} - \mathrm{\mathbf{P}}_{zs} \mathrm{\mathbf{x}}[k] \right),
 \end{equation}
-em que \( \mathrm{\mathbf{I}}_N \) representa a matriz identidade de tamanho \( N \). Como não é possível controlar diretamente sobre-aceleração em um robô com atuadores de posição, como o Robotis OP2, é necessário reconstruir a trajetória de CM usando \eqref{eq:dx_pred}. Para mais informações sobre como implementar essa técnica em um robô real, sugere-se ler \cite{tesemarcos}.
+em que \( \mathrm{\mathbf{I}}_N \) representa a matriz identidade de tamanho \( N \). Como não é possível controlar diretamente sobre-aceleração em um robô com atuadores de posição, como o Robotis OP2 ou o Chape, é necessário reconstruir a trajetória de CM usando \eqref{eq:dx_pred}. Para mais informações sobre como implementar essa técnica em um robô real, sugere-se ler \cite{tesemarcos}.
 
 Um ponto que se deve destacar é que esse método se baseia no consagrado 3D-LIPM \cite{kajita2001}, que mantém a altura do CM constante para resultar numa dinâmica linear. Entretanto, alguns pesquisadores tem explorado prescrever uma trajetória para a altura do CM \cite{herdt2013}, de modo que o algoritmo de controle deve lidar com uma dinâmica linear variante no tempo:
 \begin{equation}
 z_x\left[ k \right] = x \left[ k \right] - \frac{h}{\ddot{z}_{r,CM}\left[ k \right] + g} \ddot{x} \left[ k \right]
 \end{equation}
-em que \( \ddot{z}_{r,CM}[k] \) é a trajetória prescrita para a altura do CM. Conforme descrito em \cite{herdt2013}, uma formulação de MPC sem restrições lida facilmente com esse tipo de dinâmica. Nesse trabalho, pretende-se explorar a melhoria da eficiência energética da caminhada obtida com a variação da altura do CM, juntamente com o rolamento do pé, que será abordado na próxima subseção. Ambas características estão presentes na caminhada humana.
+em que \( \ddot{z}_{r,CM}[k] \) é a trajetória prescrita para a altura do CM. Conforme mostrado em outro trabalho do LAB-SCA \cite{silva2019}, uma formulação de MPC lida facilmente com esse tipo de dinâmica. Nesse trabalho, pretende-se manter o uso de MPC para geração de padrão de caminhada. Porém, sempre há inevitáveis erros de rastreio na trajetória de CM computada pelo MPC devido a perturbações, dinâmica dos servomotores, estimação de estado imperfeita e erros de modelo. Para corrigir o descasamento dinâmico entre o modelo de pêndulo invertido e o robô real, é comum o uso de estratégias de \emph{feedforward} e de realimentação, as quais serão abordadas na próxima subseção.
 
-\subsection{Análise da MAT de estabilidade com o manga}
+\subsection{Estratégias de Estabilização de Caminhada}
 
 Para uma análise de energia que considera a nova forma geométrica dos pés robótico, propõe-se usar o método proposto em  \cite{adamczyk2013}. Na figura 3, é exemplificada o efeito de variação de raio $\rho$ e comprimento l de um pé em forma de  arco, em um modelo de caminhada simples. 
 
