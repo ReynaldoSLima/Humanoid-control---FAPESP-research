@@ -73,9 +73,9 @@
 
 %\thispagestyle{empty}
 \begin{abstract}
-\textcolor{blue}{Neste trabalho pretende-se aplicar adaptações em algoritmos de estabilização de caminhada em robô humanoide de baixo custo (ITAndroids Chape 2ª geração). Esse trabalho será realizado no  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), onde  existe um estudo de caminhada de robôs humanoide, Robotis OP2 e ITAndroids Chape.} 
-Em uma primeira etapa, será realizada um estudo das técnicas utilizadas previamente em estudos no LAB-SCA. Então, será estudado o código para projeto das malhas de controle de estabilização de caminhada a fim de adaptar o algoritmo para o robô Chape 2ª geração.
+Neste trabalho pretende-se aplicar adaptações em algoritmos de estabilização de caminhada em robô humanoide de baixo custo (ITAndroids Chape 1ª e 2ª gerações). Esse trabalho será realizado no  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), onde  existe um estudo de caminhada de robôs humanoide, Robotis OP2 e ITAndroids Chape. O controle utilizado para o desenvolvimento da caminhada já presente no robô Chape 1ª geração será estudado numa primeira etapa. Este se baseia no método \textit{Preview Control of Zero-Moment Point}, ZMP. O código já utilizado será estudado com o objetivo de encontrar possíveis otimizações como também de adaptá-lo para o robô Chape 2ª geração.
 
+Utilizar-se-á do simulador Gazebo, já utilizado em trabalhos realizados no LAB-SCA, para validar a estabilização implementada e os ajustes de desempenho empregados. Com a validação no simulador, pretende-se realizar ensaios com o robô real, verificando a efetividade do trabalho desenvolvido com o auxílio de unidade inercial embarcada dos robôs.
 %%%
 \end{abstract}
 %%%
@@ -114,7 +114,7 @@ O grupo de pesquisa do Laboratório de Sistemas Computacionais Autônomos (LAB-S
 No trabalho mais recente \cite{tesemarcos}, investigaram-se formulações baseadas em  Controle Preditivo  que permitem ao robô decidir a 
 trajetória do CM, as posições dos pés e durações dos passos \cite{7759794}.
 
-Na figura \ref{FIG:darwinchape} (a) pode ser visto um robô humanoide Robotis OP2 com o qual o grupo iniciou seus estudos em caminhada; na Figura \ref{FIG:darwinchape} (b) observa-se o robô ITAndroids Chape 1ª geração, robô humanoide desenvolvido pelo LAB-SCA. Com os trabalhos desenvolvidos, faz-se essencial o desenvolvimento contínuo do projeto das malhas de controle de estabilização de caminhada.
+Na figura \ref{FIG:darwinchape} (a) pode ser visto um robô humanoide Robotis OP2 com o qual o grupo iniciou seus estudos em caminhada; na Figura \ref{FIG:darwinchape} (b) observa-se o robô ITAndroids Chape 1ª geração, robô humanoide desenvolvido pelo LAB-SCA. O desempenho dos robôs utilizados no LAB-SCA tem se mostrado como referência nacional em competições de robótica, campeão do futebol de robôs humanoide em 2018 e 2019 na Latin American Robotics Competition (LARC). Com os trabalhos desenvolvidos, faz-se essencial o desenvolvimento contínuo do projeto das malhas de controle de estabilização de caminhada.
 
 \begin{figure}[phtb]
 \centering
@@ -136,46 +136,8 @@ A necessidade do compensador de gravidade surge da atuação de torques indeseja
 	\includegraphics[angle=90, scale = 0.75]{walking_engine_overview.eps}
 	\caption{Visão geral do controle de caminhada.}
 	\label{FIG: doc manga}
-%\label{Rotulo}
 \end{figure} 
  
-%\textcolor{red}{Uma desvantagem da caminhada desenvolvida pelo LAB-SCA nos robôs humanoides Robotis OP2 e Chape (robô humanóide projetado pelo LAB-SCA) mostrados nas figuras 1(a) e 1(b), respectivamente, é o alto gasto energético. Devido aos pés serem chapas retangulares e sem nenhum mecanismo de amortecimento, gerando muita vibração estrutural. }
-
-
-
-
-%\textcolor{red}{Diferentes aspectos são abordados no atual estágio de desenvolvimento de pés robóticos, desde a forma geométrica dos pés à utilização de materiais flexíveis que possuem alto grau de amortecimento já que durante a caminhada bípede  deve-se levar em consideração a mudança de suportes (apoios), o que ocasiona muitas colisões fazendo a estrutura vibrar durante a caminhada.}
-
-%\textcolor{red}{O robô bípede JOHNNIE \cite{jonhie2006} tem os pés equipados com um mecanismo de amortecimento de impacto. Este mecanismo consiste de um elemento de contato em cada canto do pé. Sendo que este elemento tem uma alta deformação na direção vertical e uma camada de borracha com alto coeficiente de atrito na parte inferior, para dar uma maior estabilidade.}
-  
-%\textcolor{red}{Recentes pesquisas têm sido desenvolvidas para solas flexíveis na caminhada humanóide para a absorção de choque durante o contato do pé com solo. A grande desvantagem é fazer a estabilização devido à deformação do material, que pode acarreta não linearidades\cite{conem2018}, o que é prejudicial para o controle.}
-
-%\textcolor{red}{\textit{Magistris et al.}  propõem um  estimador de deformação que é utilizado no projeto do controlador, e assim o ZMP desejado para a estabilidade é cumprido \cite{sola2016}. Foram realizados dois experimentos de comparação no robô humanóide HRP-4, um com estimador e outro sem o estimador. O experimento com estimador resultou na estabilização do ZMP durante a caminhada e consequentemente evitava a queda do robô.}
- 
-%\textcolor{red}{Há estudos que  mudam a forma geométrica dos pés de robôs humanoides para que se adaptem a terrenos mais irregulares.\textit{Tsagarakis et al.} introduz um mecanismo de dedos nos pés com rigidez variável usando uma mola de lâmina e esfera de borracha em série, incluindo também sensores de pressão \cite{hertz2016} . Um protótipo dos pés foi construído e os resultados experimentais validaram o mecanismo.}
-
-%\textcolor{red}{\textit{Shih et al.}  propõem um pé formado com duas lâminas curvas, em que sensores de força no pé do robô são calibrados pela magnitude e localização da força de reação no solo \cite{curvo20017}.}
-
-%\textcolor{red}{Outra forma de suavizar este impacto é  a elevação do calcanhar e dedos durante a caminhada. \textit{Lee et al.} apresentam um controlador de locomoção que utiliza calcanhar e dedos automaticamente calculados para serem levantantados durante a marcha, superando as restrições cinemáticas \cite{movi2016}.  Este modelo ajuda na travessia de terreno irregular, fornecendo suporte. Foram feitas simulações realistas nos robôs humanóides THOR-RD e DARwIn-OP.}
-
-%\textcolor{red}{Recentemente o estudo de pés em robôs bípedes pode ser utilizado em biomecatrônica, \textit{Reis et al.} apresentam uma prótese transtibial em  modelo de escala reduzida para ser implementado no robô humanoide DARwIn-OP \cite{protese2017}. O modelo servirá como estudo para testar mecanismos propostos para próteses tornozelo-pé humana. \textit{Forner-Cordero et al.}  utilizam dispositivos robóticos diretamente na reabilitação da caminhada humana, através de exoesqueleto em membros inferiores \cite{fornero2009}.}
-
-%\textcolor{red}{Dando enfoque na amputação transtibial, o LBRSC (Laboratório de Biomecânica, Robótica e Simulação Computacional) localizado na Escola de Engenharia Industrial Metalúrgica de Volta Redonda (EEIMVR), vem desenvolvendo estudo para um  pé protético \cite{luciana2017}. }
-
-%\textcolor{red}{A partir de um estudo da marcha humana, quantificou-se o comportamento do centro de massa durante a marcha humana através da técnica de Cinemetria. Essa técnica da Cinemetria trata da análise de parâmetros cinemáticos obtidos da coleta de imagens através de câmeras de vídeo num volume de controle, realizando-se sua posterior análise através de softwares de imagens, como exemplo, cita-se o software de domínio público Kinovea\cite{cinemetria2017}. }
-
-%\textcolor{red}{Em Biomecânica através da reconstituição de imagens, normalmente pelo método da DLT (Direct Linear Transformation \cite{dlt2011}) mede-se parâmetros cinemáticos do movimento, como posição, velocidade e aceleração, de cada segmento corporal. }
-
-%\textcolor{red}{O pé tem as funções de absorção de choque, estabilidade da sustentação de peso e progressão. Essas tarefas ocorrem sequencialmente, conforme o contato com o solo avança. Baseando-se nisso, a beneficiária da bolsa  desenvolveu um modelo matemático de pé protético  em que se considera o contato e o rolamento do pé \cite{carol2018}, dando origem ao protótipo da figura 2.}
-
-%\begin{figure}[!htb]
-%\centering
-%\includegraphics{protese}
-%\caption{Protótipo do pé protético desenvolvido pelo LBRSC.}
-%\label{Rotulo}
-%\end{figure}
-
-%\textcolor{red}{Tanto quanto se sabe na Literatura, se conhece trabalho de robôs com pés curvos que possuem atuação limitada \cite{massachu}. Mas não se conhece humanoides completamente atuados que caminham com pés curvos permitindo o rolamento, semelhante ao ser humano. Esta será a grande contribuição do trabalho.}
 
 O embasamamento matemático dos métodos propostos será apresentado a seguir:
 
@@ -279,75 +241,65 @@ Para determinar os ganhos, modelou-se o robô em suporte simples como dois ``man
 
 \section{Objetivos}
 
-Conforme apresentado anteriormente, no estágio atual da pesquisa de robôs humanoides, \textcolor{blue}{para obter a estabilidade desejada frente a fatores do mundo real para um robô humanoide, dispõe-se principalmente de uma malha de controle baseada em um sistema PD, além de um sistema de modelagem com parâmetros bem ajustados.}
-%\textcolor{red}{alguns fatores e parâmetros são fundamentais para permitir o desenvolvimento de novos modelos de marcha. Dentre eles podem ser considerados materiais com alto amortecimento, uma geometria que permita rolamento e consequentemente diminuição da força de impacto e diminuição de gastos energéticos.}
+Conforme apresentado anteriormente, no estágio atual da pesquisa de robôs humanoides, para obter a estabilidade desejada frente a fatores do mundo real para um robô humanoide, dispõe-se principalmente de uma malha de controle baseada em um sistema P+V, além de um sistema de modelagem com parâmetros bem ajustados.
 
-\textcolor{blue}{Este trabalho irá desenvolver a modelagem do robô Chape 2ª geração segundo o ajuste de seus parâmetros para aplicação destes na malha de controle de estabilização. Serão realizados ainda adaptações nos algoritmos de estabilização já desenvolvidos pelo laboratório LAB-SCA, com o objetivo de tornar a caminhada do novo robô humanoide.} 
-
-%\textcolor{red}{Este  trabalho efetivamente juntará conhecimentos de duas áreas, Biomecânica e Robótica através de uma colaboração de dois laboratórios. Portanto no presente trabalho pretende-se adequar o pé protético desenvolvido pelo LBRSC e adaptá-lo em um robô existente no LAB-SCA, com o objetivo de sua marcha ficar energeticamente mais eficiente. }
+Este trabalho desenvolverá a modelagem do robô Chape 2ª geração segundo o ajuste de seus parâmetros para aplicação destes na malha de controle de estabilização. Serão realizados ainda adaptações nos algoritmos de estabilização já desenvolvidos pelo laboratório LAB-SCA com o robô Chape 1ª geração.
 
 Para isso, segue os  seguintes objetivos específicos:
 
-\textcolor{blue}{
 \begin{enumerate}
-\item Identificar, a partir do modelo do Robô ITAndroids Chape 2ª geração, os parâmetros da malha de controle de estabilização.
+
+\item Busca-se otimizar o código já existente da caminhada do robô humanoide ITAndroids Chape 1ª geração.
+
+\item Identificar o modelo do Robô ITAndroids Chape 2ª geração para então determinar os parâmetros da malha de controle de estabilização.
+
 \item Adaptar a malha de controle de estabilização da caminhada para novo robô humanoide Chape 2ª geração.
+
 \item Ajustar ganhos para melhor funcionamento da malha no robô real.
-\end{enumerate}}
-%\textcolor{red}{
-%\begin{enumerate}
-%\item 	Identificar, a partir da técnica de Cinemetria e Dinamometria por sensores de pressão nos pés, os parâmetros do robô Robotis OP2.
-%\item	Desenvolver pés robóticos que permitam diminuição do gasto energético e absorção do impacto.
-%\item	Implementação dos pés  na caminhada do robô (Robotis OP2).
-% \end{enumerate}}
+\end{enumerate}
 
-\textcolor{blue}{Finalmente, como objetivo institucional busca-se o fortalecimento da equipe de robótica do ITA, ITAndroids, cujos trabalhos na categoria humanoide são relacionados ao laboratório LAB-SCA e geram expressivos resultados a nível mundial, como na competição mundial de robótica, Robocup. Espera-se que o trabalho fomente continuidade no desenvolvimento da pesquisa na área de caminhada, pelo menos em um trabalho de conclusão de curso.}
+Finalmente, como objetivo institucional busca-se o fortalecimento da equipe de robótica do ITA, ITAndroids, cujos trabalhos na categoria humanoide são relacionados ao laboratório LAB-SCA e geram expressivos resultados a nível mundial, como na competição mundial de robótica, RoboCup. Espera-se que o trabalho fomente continuidade no desenvolvimento da pesquisa na área de caminhada, pelo menos em um trabalho de conclusão de curso.
 
-%\textcolor{red}{Finalmente, como objetivo institucional busca-se o fortalecimento da colaboração entre os dois laboratórios(LBRSC e LAB-SCA). Espera-se que este trabalho também fomente trabalhos, pelo menos um de conclusão de curso e de iniciação científica, em algum dos temas: Cinemetria, identificação de parâmetros e instrumentação do pé. }
-
-
-Também espera-se a publicação dos temas: identificação de robô humanoide, projeto mecânico do pé com rolamento, caminhada do robô humanoide com rolamento e instrumentação do pé. 
+Pretende-se ainda publicar sobre técnicas para estabilização de caminhada de robô humanoide.
 
 Pretende-se a publicação nas seguintes conferências:
 \begin{itemize}
-   \item International Congress of Mechanical Engineering (COBEM);
-   \item Congresso Nacional de Engenharia Mecânica (CONEM);
 
-\item Ibero Latin American Congress on Computational Methods in Engineering (CILAMCE);
+\item International Congress of Mechanical Engineering (COBEM);
 
-\item Latin Americam Robotics Symposium (LARS);
+\item Simpósio Brasileiro de Automoção Inteligente (SBAI);
 
-\item IEEE RAS Internacional Conference on Humanoids Robots(HUMANOIDS);
+\item Congresso Brasileiro de Automática (CBA);
 
-\item International Conference on Robotics and Automation (ICRA);
+\item Latin Americam Robotics Symposium (LARS).
 
-\item International Conference on Intelligent Robots and Systems(IROS).
- \end{itemize}
+\end{itemize}
 
+\newpage
 
 \section{Plano de trabalho}
 
-A.	\textcolor{blue}{Estudo introdutório a matéria de controle;}
+A.	Estudo introdutório a matéria de controle;
 
-B.	\textcolor{blue}{Estudo sobre algoritmos de otimização;}
+B.	Estudo sobre algoritmos de otimização;
 
-C.	\textcolor{blue}{Estudo sobre a caminhada do robô humanoide;}
+C.	Estudo sobre a caminhada do robô humanoide;
 
-D.	\textcolor{blue}{Estudo detalhado do código do robô humanoide relacionado ao seu caminhar, organização do código e início dos planos de otimização;}
+D.	Estudo detalhado do código do robô humanoide relacionado ao seu caminhar, organização do código e início dos planos de otimização;
 
-E.	\textcolor{blue}{Confecção do primeiro relatório científico}
+E.	Confecção do primeiro relatório científico;
 
-F.	\textcolor{blue}{Continuação do processo de otimização;}
+F.	Continuação do processo de otimização;
 
-G.	\textcolor{blue}{Testes no robô real seguidos de aquisição de dados;}
+G.	Testes no robô real seguidos de aquisição de dados;
 
-H.	\textcolor{blue}{Fim do processo de otimização seguido da comparação de resultados do antes e pós processo de modificação e otimização;}
+H.	Fim do processo de otimização seguido da comparação de resultados do antes e pós processo de modificação e otimização;
 
-I.	\textcolor{blue}{Implementação definitiva do novo código;}
+I.	Implementação definitiva do novo código;
 
-J.	\textcolor{blue}{Ajuste na malha de controle para melhor desempenho;}
+J.	Ajuste na malha de controle para melhor desempenho;
 
-K.	\textcolor{blue}{Confecção do segundo relatório científico.}
+K.	Confecção do segundo relatório científico.
 
 
 \begin{table}[h!]
@@ -356,7 +308,7 @@ K.	\textcolor{blue}{Confecção do segundo relatório científico.}
 	\label{tab:Cronograma}
 		\begin{tabular}{|c|C|C|C|C|C|C|C|C|C|C|C|}
 		\hline
-		\multirow{2}{*}{\textcolor{blue}{Bimestre}} &  \multicolumn{11}{c|}{Atividade} \\
+		\multirow{2}{*}{Bimestre} &  \multicolumn{11}{c|}{Atividade} \\
 		 & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{B} & \multicolumn{1}{c}{C} & \multicolumn{1}{c}{D} & \multicolumn{1}{c}{E} & \multicolumn{1}{c}{F} & \multicolumn{1}{c}{G} & \multicolumn{1}{c}{H} & \multicolumn{1}{c}{I} & \multicolumn{1}{c}{J} & K 	\\
 		  \cline{2-12}
 			1 & \cellcolor{gray!50} & \cellcolor{gray!50} &  &  &  &	 &  &  &  &  & \\
@@ -375,56 +327,39 @@ K.	\textcolor{blue}{Confecção do segundo relatório científico.}
 	\end{tabular}
 \end{table}
 
-%\newpage
+\newpage
 
 \section{Material e métodos}
 
 Para a excução do projeto proposto são necessários os seguintes recursos materiais:
 
-1.	O robô humanoide (Robotis OP2) comprado pelo  projeto FAPESP 2016/03647-3, utilizado na tese de doutorado \cite{tesemarcos};
+\begin{itemize}
 
-2.	\textcolor{blue}{O robô humanoide (ITAndroids Chape 1ª geração e 2ª geração), desenvolvido no LAB-SCA (Laboratório de Sistemas de Controle autônomos)}.
+\item O robô humanoide (ITAndroids Chape 1ª geração e 2ª geração), desenvolvido no LAB-SCA (Laboratório de Sistemas de Controle autônomos).
 
-3.	 Acesso ao LAB-SCA (Laboratório de Sistemas de Controle autônomos), o qual contribuirá com equipamentos de confecção.
+\item Acesso ao LAB-SCA (Laboratório de Sistemas de Controle autônomos), o qual contribuirá com equipamentos de confecção.
 
-4.	Licença do software Matlab, \textcolor{blue}{licença de acesso RoboCup 2019}.
+\item Licença do software Matlab.
 
-5.	\textcolor{red}{Modelo de simulação do Darwin desenvolvido na tese de doutorado dentro do contexto do projeto FAPESP 2016/03647-3.} \textcolor{green}{não sei}.
+\item Modelo de simulação do Darwin desenvolvido na tese de doutorado dentro do contexto do projeto FAPESP 2016/03647-3 \cite{tesemarcos}.
+
+\end{itemize}
 
 
-\textcolor{blue}{Inicialmente, será feito estudo da Literatura para aprender sobre teoria de controle e sobre as técnicas utilizadas no laboratório LAB-SCA para estabilização de caminhada. Então, será estudado o código para projeto das malhas de controle de estabilização da caminhada.} 
+Inicialmente, será feito estudo da Literatura para aprender sobre teoria de controle e sobre as técnicas utilizadas no laboratório LAB-SCA para estabilização de caminhada. Então, será estudado o código para projeto das malhas de controle de estabilização da caminhada.
 
-\textcolor{blue}{Com isso, planejar-se-á as modificações necessárias para adaptar o algoritmo de estabilização para o robô Chape 2ª Geração. Por fim, serão feitos experimentos para validar a estabilização implementada e ajustes para melhorar o desempenho da caminhada do robô.}
+Com isso, planejar-se-á as modificações necessárias para adaptar o algoritmo de estabilização para o robô Chape 2ª Geração. Por fim, serão feitos experimentos para validar a estabilização implementada e ajustes para melhorar o desempenho da caminhada do robô.
 
 \newpage
-%\ŧextcolor{red}{A metodologia seguida neste trabalho consiste em uma primeira etapa de experimentos para identificação de parâmetros de um robô Robotis OP2, para o qual existe um modelo de caminhada em um simulador.}
 
-%\ŧextcolor{red}{Após isso propõe-se um novo modelo de caminhada que considerará o rolamento, com a construção de um novo pé. Posteriormente, serão feitas simulações dinâmicas tanto para validação do dispositivo construído quanto para a caminhada. Por fim, a implementação desse dispositivo no humanoide Robotis OP2.}
-
-
-
-%\newpage
 
 \section{Forma de análise dos resultados}
 
-\textcolor{blue}{Pretende-se validar a estabilização implementada e os ajustes utilizados para melhorar o desempenho da caminhada do robô. Inicialmente o sistema será testado por um simulador, por experiência do LAB-SCA utilizar-se-á o simulador Gazebo.}
+Pretende-se validar a estabilização implementada e os ajustes utilizados para melhorar o desempenho da caminhada do robô. Inicialmente o sistema será testado em um simulador, por experiência do LAB-SCA utilizar-se-á o simulador Gazebo.
 
+O uso de simulação será usado numa etapa preliminar de resultados, além disso possui vantagens por fornecer diversos dados que são dificilmente extraídos de um experimento real, como as forças e torques de todos os componentes do robô. No simulador Gazebo, por sua vez, é possível inserir perturbações controladas no robô, permitindo testes em situações de interesse. Além disso, no simulador tem-se acesso aos estados verdadeiros do robô, validando uma análise confiável das mudanças.
 
-%\textcolor{red}{aproveitar a experiência da instituição em identificação \cite{gripp}, a partir disso os dados obtidos por Cinemetria e Dinamometria serão analisados por algum método de identificação na abordagem amostrada por \cite{ident2014,ident2017}.}
-
-%\textcolor{red}{No projeto mecânico do pé robótico será verificado a resistência mecânica de cada componente considerando um carregamento estático. Para as forças dinâmicas será realizada uma análise modal, utilizando o método de elementos finitos.}
-
-%\textcolor{red}{A caminhada com o novo pé será analisada por um simulador, por experiência do LAB-SCA pretende utilizar o simulador Gazebo que atualmente é usado para o modelo de simulação do Robotis OP2.}
-
-O uso de simulação será usado numa etapa preliminar de resultados, além disso possui vantagens por fornecer diversos dados que são dificilmente extraídos de um experimento real. Como as forças e torques de todos os componentes do robô. \textcolor{blue}{Além disso, no simulador tem-se acesso aos estados verdadeiros do robô, validando uma análise confiável das mudanças.}
-
-\textcolor{blue}{Havendo a validação no Gazebo, pretende-se validar a estabilização no robô humanoide Chape.} \textcolor{green}{ Para isso...}
-
-%\textcolor{red}{Essas informações são essênciais para uma  avaliação precisa do consumo energético, de modo a validar o aumento da eficiência energética da caminhada proposta.}
-
-%\textcolor{red}{Posteriormente, o experimento da cinemetria será repetido para a caminhada que utiliza os pés curvos, para uma validação experimental do algoritmo e do dispositivo desenvolvidos neste trabalho.}
-
-%\textcolor{red}{Inicialmente a instrumentação do pé será validada em bancada, posteriormente o pé sensoriado será integrado no robô e será realizados novos experimentos com esse pé.}
+Havendo a validação no Gazebo, pretende-se validar a estabilização no robô humanoide Chape. Para isso serão realizados ensaios com o robô real. Para verificar a efetividade dos métodos implementados, deve-se analisar os dados coletados pela unidade inercial embarcada dos robôs.
 
 
 \newpage
