@@ -165,6 +165,47 @@
     \field{year}{2009}
   \endentry
 
+  \entry{7759794}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=MMROA}{%
+         family={{Maximo}},
+         familyi={M\bibinitperiod},
+         given={M.\bibnamedelima R. O.\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod
+  O\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=RCHC}{%
+         family={{Ribeiro}},
+         familyi={R\bibinitperiod},
+         given={C.\bibnamedelima H.\bibnamedelima C.},
+         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
+  C\bibinitperiod},
+      }}%
+      {{hash=ARJM}{%
+         family={{Afonso}},
+         familyi={A\bibinitperiod},
+         given={R.\bibnamedelima J.\bibnamedelima M.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MMROARCHCARJM1}
+    \strng{fullhash}{MMROARCHCARJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2016 IEEE/RSJ International Conference on Intelligent
+  Robots and Systems (IROS)}
+    \verb{doi}
+    \verb 10.1109/IROS.2016.7759794
+    \endverb
+    \field{issn}{2153-0866}
+    \field{pages}{5399\bibrangedash 5404}
+    \field{title}{Mixed-integer programming for automatic walking step
+  duration}
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{max22}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=MMROA}{%
@@ -189,15 +230,15 @@
   M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MMROARCHCARJM1}
-    \strng{fullhash}{MMROARCHCARJM1}
+    \strng{namehash}{MMROARCHCARJM2}
+    \strng{fullhash}{MMROARCHCARJM2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{booktitle}{Simp\'{o}sio Brasileiro de Automa\c{c}\~{a}o Inteligente}
     \field{title}{{Reference zmp manipulation for energetic and computationally
   efficient walking using zmp preview control}}
     \list{location}{1}{%
-      {Porto Alegre, Brasil,}%
+      {Porto Alegre, Brasil}%
     }
     \field{year}{2017}
   \endentry
@@ -234,7 +275,7 @@
     \field{title}{{Mixed integer programming for automatic walking step
   duration}}
     \list{location}{1}{%
-      {Daejeon, Cor\'{e}ia,}%
+      {Daejeon, Cor\'{e}ia}%
     }
     \field{year}{2016}
   \endentry
@@ -263,14 +304,14 @@
   M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MMROARCHCARJM1}
-    \strng{fullhash}{MMROARCHCARJM1}
+    \strng{namehash}{MMROARCHCARJM2}
+    \strng{fullhash}{MMROARCHCARJM2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{booktitle}{Simp\'{o}sio Brasileiro de Automa\c{c}\~{a}o Inteligente}
     \field{title}{{Modeling of a position servo used in robotics applications}}
     \list{location}{1}{%
-      {Porto Alegre, Brasil,}%
+      {Porto Alegre, Brasil}%
     }
     \field{year}{2017}
   \endentry
@@ -371,508 +412,6 @@
     \field{volume}{24}
     \field{journaltitle}{Advanced Robotics}
     \field{year}{2010}
-  \endentry
-
-  \entry{jonhie2006}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=BT}{%
-         family={Buschmann},
-         familyi={B\bibinitperiod},
-         given={Thomas},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=LS}{%
-         family={Lohmeier},
-         familyi={L\bibinitperiod},
-         given={Sebastian},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=UH}{%
-         family={Ulbrich},
-         familyi={U\bibinitperiod},
-         given={Heinz},
-         giveni={H\bibinitperiod},
-      }}%
-      {{hash=PF}{%
-         family={Pfeiffer},
-         familyi={P\bibinitperiod},
-         given={Friedrich},
-         giveni={F\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{BTLSUH+1}
-    \strng{fullhash}{BTLSUHPF1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Proc. Int. Conf. Robotics and Automation}
-    \field{pages}{2673 \bibrangedash  2678}
-    \field{title}{{Dynamics Simulation for a Biped Robot: Modeling and
-  Experimental Verification}}
-    \list{location}{1}{%
-      {Orlando, EUA,}%
-    }
-    \field{year}{2006}
-  \endentry
-
-  \entry{conem2018}{inproceedings}{}
-    \name{author}{3}{}{%
-      {{hash=dSCCD}{%
-         prefix={da},
-         prefixi={d\bibinitperiod},
-         family={Silva},
-         familyi={S\bibinitperiod},
-         given={Caroline Cristine\bibnamedelima Duarte},
-         giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  D\bibinitperiod},
-      }}%
-      {{hash=DLHM}{%
-         family={Duque},
-         familyi={D\bibinitperiod},
-         given={Luiz Heleno\bibnamedelima Moreira},
-         giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
-  M\bibinitperiod},
-      }}%
-      {{hash=dGJP}{%
-         prefix={de},
-         prefixi={d\bibinitperiod},
-         family={Gouv\^{e}a},
-         familyi={G\bibinitperiod},
-         given={Jayme\bibnamedelima Pereira},
-         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{SCCDdDLHMGJPd1}
-    \strng{fullhash}{SCCDdDLHMGJPd1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Congresso Nacional de Engenharia Mec\^{a}nica}
-    \field{title}{{Modelo para representar o comportamento de um pol\'{i}mero
-  de car\'{a}ter n\~{a}o linear}}
-    \list{location}{1}{%
-      {Salvador, Brasil,}%
-    }
-    \field{year}{2018}
-  \endentry
-
-  \entry{sola2016}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=MGD}{%
-         family={Magistris},
-         familyi={M\bibinitperiod},
-         given={Giovanni\bibnamedelima De},
-         giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=PA}{%
-         family={Pajon},
-         familyi={P\bibinitperiod},
-         given={Adrien},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=MS}{%
-         family={Miossec},
-         familyi={M\bibinitperiod},
-         given={Sylvain},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=KA}{%
-         family={Kheddar},
-         familyi={K\bibinitperiod},
-         given={Abderrahmane},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MGDPAMS+1}
-    \strng{fullhash}{MGDPAMSKA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Proc. Int. Conf. Robotics and Automation}
-    \field{pages}{1757 \bibrangedash  1762}
-    \field{title}{{Humanoid walking with compliant soles using a deformation
-  estimator}}
-    \list{location}{1}{%
-      {Estocolmo, Su\'{e}cia,}%
-    }
-    \field{year}{2016}
-  \endentry
-
-  \entry{hertz2016}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=CW}{%
-         family={Choi},
-         familyi={C\bibinitperiod},
-         given={Wooseok},
-         giveni={W\bibinitperiod},
-      }}%
-      {{hash=MCGA}{%
-         family={Medrano-Cerda},
-         familyi={M\bibinitperiod-C\bibinitperiod},
-         given={Gustavo\bibnamedelima A.},
-         giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
-      }}%
-      {{hash=CDG}{%
-         family={Caldwell},
-         familyi={C\bibinitperiod},
-         given={Darwin\bibnamedelima G.},
-         giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod},
-      }}%
-      {{hash=TNG}{%
-         family={Tsagarakis},
-         familyi={T\bibinitperiod},
-         given={Nikos\bibnamedelima G.},
-         giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CWMCGACDG+1}
-    \strng{fullhash}{CWMCGACDGTNG1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Proc. Int. Conf. Robotics and Automation}
-    \field{pages}{642 \bibrangedash  647}
-    \field{title}{{Design of a Variable Compliant Humanoid Foot with a New Toe
-  Mechanism}}
-    \list{location}{1}{%
-      {Estocolmo, Su\'{e}cia,}%
-    }
-    \field{year}{2016}
-  \endentry
-
-  \entry{curvo20017}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=LJE}{%
-         family={Leu},
-         familyi={L\bibinitperiod},
-         given={Jessica\bibnamedelima E.},
-         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
-      }}%
-      {{hash=CYH}{%
-         family={Chen},
-         familyi={C\bibinitperiod},
-         given={Yu-Hsuan},
-         giveni={Y\bibinitperiod-H\bibinitperiod},
-      }}%
-      {{hash=LST}{%
-         family={Liu},
-         familyi={L\bibinitperiod},
-         given={Shao-Tseng},
-         giveni={S\bibinitperiod-T\bibinitperiod},
-      }}%
-      {{hash=SWP}{%
-         family={Shih},
-         familyi={S\bibinitperiod},
-         given={Wen-Pin},
-         giveni={W\bibinitperiod-P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{LJECYHLST+1}
-    \strng{fullhash}{LJECYHLSTSWP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Proc. Int. Conf. Control, Automation and Robotics}
-    \field{pages}{134 \bibrangedash  137}
-    \field{title}{{Development of a Humanoid Robot Foot with Distributive Force
-  Sensors}}
-    \list{location}{1}{%
-      {Nagoya, Japão,}%
-    }
-    \field{year}{2017}
-  \endentry
-
-  \entry{movi2016}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=SJ}{%
-         family={Seung-Joon},
-         familyi={S\bibinitperiod-J\bibinitperiod},
-      }}%
-      {{hash=LDD}{%
-         family={Lee},
-         familyi={L\bibinitperiod},
-         given={Daniel\bibnamedelima D.},
-         giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{SJLDD1}
-    \strng{fullhash}{SJLDD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Proc. Int. Conf. Intelligent Robots and Systems}
-    \field{pages}{5452 \bibrangedash  5458}
-    \field{title}{{Heel and Toe Lifting Walk Controller for Resource
-  Constrained Humanoid Robots}}
-    \list{location}{1}{%
-      {Daejeon, Cor\'{e}ia,}%
-    }
-    \field{year}{2016}
-  \endentry
-
-  \entry{protese2017}{inproceedings}{}
-    \name{author}{5}{}{%
-      {{hash=AJ}{%
-         family={Alves},
-         familyi={A\bibinitperiod},
-         given={Joana},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=SE}{%
-         family={Seabra},
-         familyi={S\bibinitperiod},
-         given={Eurico},
-         giveni={E\bibinitperiod},
-      }}%
-      {{hash=FC}{%
-         family={Ferreira},
-         familyi={F\bibinitperiod},
-         given={César},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=PC}{%
-         family={P.Santos},
-         familyi={P\bibinitperiod},
-         given={Cristina},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=RLP}{%
-         family={Reis},
-         familyi={R\bibinitperiod},
-         given={Luís\bibnamedelima Paulo},
-         giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{AJSEFC+1}
-    \strng{fullhash}{AJSEFCPCRLP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Proc. Int. Conf. Autonomous Robot Systems and
-  Competitions}
-    \field{pages}{128 \bibrangedash  133}
-    \field{title}{{Design and dynamic modelling of an ankle-foot prosthesis for
-  humanoid robot}}
-    \list{location}{1}{%
-      {Coimbra, Portugal,}%
-    }
-    \field{year}{2017}
-  \endentry
-
-  \entry{fornero2009}{article}{}
-    \name{author}{5}{}{%
-      {{hash=MJC}{%
-         family={Morenoa},
-         familyi={M\bibinitperiod},
-         given={Juan\bibnamedelima C.},
-         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
-      }}%
-      {{hash=BF}{%
-         family={Brunettia},
-         familyi={B\bibinitperiod},
-         given={Fernando},
-         giveni={F\bibinitperiod},
-      }}%
-      {{hash=NE}{%
-         family={Navarrob},
-         familyi={N\bibinitperiod},
-         given={Enrique},
-         giveni={E\bibinitperiod},
-      }}%
-      {{hash=FCA}{%
-         family={Forner-Cordero},
-         familyi={F\bibinitperiod-C\bibinitperiod},
-         given={Arturo},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=PJL}{%
-         family={Ponsa},
-         familyi={P\bibinitperiod},
-         given={Jos\'{e}\bibnamedelima L.},
-         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MJCBFNE+1}
-    \strng{fullhash}{MJCBFNEFCAPJL1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{number}{2}
-    \field{pages}{245\bibrangedash 256}
-    \field{title}{Analysis of the human interaction with a wearable lower-limb
-  exoskeleton}
-    \field{volume}{6}
-    \field{journaltitle}{Applied Bionics and Biomechanics}
-    \field{year}{2009}
-  \endentry
-
-  \entry{luciana2017}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=LLM}{%
-         family={Lessa},
-         familyi={L\bibinitperiod},
-         given={Luciana\bibnamedelima Moreira},
-         giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{LLM1}
-    \strng{fullhash}{LLM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{{ An\'{a}lise do impacto durante a marcha para o
-  desenvolvimento de uma pr\'{o}tese para amputados unilateral de membro
-  inferior }}
-    \list{institution}{1}{%
-      {Escola de Engenharia Industrial Metal\'{u}gica de Volta Redonda}%
-    }
-    \field{type}{Disserta\c{c}\~{a}o de Mestrado}
-    \field{year}{2017}
-  \endentry
-
-  \entry{cinemetria2017}{inproceedings}{}
-    \name{author}{9}{}{%
-      {{hash=MACM}{%
-         family={Maffra},
-         familyi={M\bibinitperiod},
-         given={Ana Carolina\bibnamedelima Motta},
-         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  M\bibinitperiod},
-      }}%
-      {{hash=dSCCD}{%
-         prefix={da},
-         prefixi={d\bibinitperiod},
-         family={Silva},
-         familyi={S\bibinitperiod},
-         given={Caroline Cristine\bibnamedelima Duarte},
-         giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  D\bibinitperiod},
-      }}%
-      {{hash=dSBTJD}{%
-         prefix={de},
-         prefixi={d\bibinitperiod},
-         family={Sousa},
-         familyi={S\bibinitperiod},
-         given={Bernardo Tomas Jose\bibnamedelima Dias},
-         giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod
-  J\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=dAD}{%
-         prefix={de},
-         prefixi={d\bibinitperiod},
-         family={Avila},
-         familyi={A\bibinitperiod},
-         given={Daniele},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=BGR}{%
-         family={Baumgardt},
-         familyi={B\bibinitperiod},
-         given={Guilherme\bibnamedelima Ribeiro},
-         giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod},
-      }}%
-      {{hash=NRS}{%
-         family={Nascimento},
-         familyi={N\bibinitperiod},
-         given={Renata\bibnamedelima Souza},
-         giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-      {{hash=RTR}{%
-         family={Rebelo},
-         familyi={R\bibinitperiod},
-         given={Thaisa\bibnamedelima Roxo},
-         giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod},
-      }}%
-      {{hash=DLHM}{%
-         family={Duque},
-         familyi={D\bibinitperiod},
-         given={Luiz Heleno\bibnamedelima Moreira},
-         giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
-  M\bibinitperiod},
-      }}%
-      {{hash=dGJP}{%
-         prefix={de},
-         prefixi={d\bibinitperiod},
-         family={Gouv\^{e}a},
-         familyi={G\bibinitperiod},
-         given={Jayme\bibnamedelima Pereira},
-         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MACMSCCDdSBTJDd+1}
-    \strng{fullhash}{MACMSCCDdSBTJDdADdBGRNRSRTRDLHMGJPd1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Safety, Health and Environment World Congress}
-    \field{pages}{177 \bibrangedash  181}
-    \field{title}{{An\'{a}lise cinem\'{a}tica do membro superior humano durante
-  a marcha atrav\'{e}s do modelo multicorpos}}
-    \list{location}{1}{%
-      {Vila Real, Portugal,}%
-    }
-    \field{year}{2017}
-  \endentry
-
-  \entry{dlt2011}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=dSGV}{%
-         prefix={de},
-         prefixi={d\bibinitperiod},
-         family={Souza},
-         familyi={S\bibinitperiod},
-         given={Graziella\bibnamedelima Valen\c{c}a},
-         giveni={G\bibinitperiod\bibinitdelim V\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{SGVd1}
-    \strng{fullhash}{SGVd1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{{ Gera\c{c}\~{a}o de MDT usando um triplet de imagem de alos
-  e transforma\c{c}\~{a}o linear direta (DLT) }}
-    \list{institution}{1}{%
-      {Universidade Federal do Paran\'{a}}%
-    }
-    \field{type}{Disserta\c{c}\~{a}o de Mestrado}
-    \field{year}{2011}
-  \endentry
-
-  \entry{carol2018}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=dSCCD}{%
-         prefix={da},
-         prefixi={d\bibinitperiod},
-         family={Silva},
-         familyi={S\bibinitperiod},
-         given={Caroline Cristine\bibnamedelima Duarte},
-         giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  D\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{SCCDd1}
-    \strng{fullhash}{SCCDd1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{{ Simula\c{c}\~{a}o din\^{a}mica de um p\'{e} prot\'{e}tico
-  considerando rolamento e deforma\c{c}\~{a}o de contato }}
-    \list{institution}{1}{%
-      {Escola de Engenharia Industrial Metal\'{u}gica de Volta Redonda}%
-    }
-    \field{type}{Disserta\c{c}\~{a}o de Mestrado}
-    \field{year}{2018}
-  \endentry
-
-  \entry{massachu}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=TRL}{%
-         family={Tedrake},
-         familyi={T\bibinitperiod},
-         given={Russell\bibnamedelima L.},
-         giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{TRL1}
-    \strng{fullhash}{TRL1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{{Applied Optimal Control for Dynamically Stable Legged
-  Locomotion}}
-    \list{institution}{1}{%
-      {Massachusetts Institute of Technology}%
-    }
-    \field{type}{Tese de Doutorado}
-    \field{year}{2004}
   \endentry
 
   \entry{kajita2003}{inproceedings}{}
@@ -1087,96 +626,6 @@
     \field{volume}{216}
     \field{journaltitle}{The Journal of Experimental Biology}
     \field{year}{2013}
-  \endentry
-
-  \entry{gripp}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=GJAB}{%
-         family={Gripp},
-         familyi={G\bibinitperiod},
-         given={J.\bibnamedelima A.\bibnamedelima B.},
-         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
-  B\bibinitperiod},
-      }}%
-      {{hash=SFLM}{%
-         family={Santos},
-         familyi={S\bibinitperiod},
-         given={F.\bibnamedelima L.\bibnamedelima M.},
-         giveni={F\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim
-  M\bibinitperiod},
-      }}%
-      {{hash=BCR}{%
-         family={Bernardo},
-         familyi={B\bibinitperiod},
-         given={C.\bibnamedelima R.},
-         giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
-      }}%
-      {{hash=GLCS}{%
-         family={G\'{o}es},
-         familyi={G\bibinitperiod},
-         given={L.\bibnamedelima C.\bibnamedelima S.},
-         giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{GJABSFLMBCR+1}
-    \strng{fullhash}{GJABSFLMBCRGLCS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Brazilian Congress of Mechanical Engineering}
-    \field{title}{{ Modeling and Identification of a Two Link Flexible
-  Manipulator}}
-    \list{location}{1}{%
-      {Natal, Brasil,}%
-    }
-    \field{year}{2011}
-  \endentry
-
-  \entry{ident2014}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=vZP}{%
-         prefix={van},
-         prefixi={v\bibinitperiod},
-         family={Zutven},
-         familyi={Z\bibinitperiod},
-         given={Pieter},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{ZPv1}
-    \strng{fullhash}{ZPv1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{{Control and Identification of Bipedal Humanoid Robots:
-  Stability Analysis and Experiments}}
-    \list{institution}{1}{%
-      {Eindhoven University of Technology}%
-    }
-    \field{type}{Tese de Doutorado}
-    \field{year}{2014}
-  \endentry
-
-  \entry{ident2017}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=RJCA}{%
-         family={Reggeti},
-         familyi={R\bibinitperiod},
-         given={Juan Carlos\bibnamedelima Arevalo},
-         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{RJCA1}
-    \strng{fullhash}{RJCA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{{Parameter Identification and Modeling of Contact
-  Properties}}
-    \list{institution}{1}{%
-      {Escuela T\'{e}cnica Superior de Ingenieros Industriales}%
-    }
-    \field{type}{Tese de Doutorado}
-    \field{year}{2017}
   \endentry
 \enddatalist
 \endinput

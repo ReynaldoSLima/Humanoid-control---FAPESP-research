@@ -33,7 +33,7 @@
 }\\
 \vspace{30px}
 \normalsize \textbf{Projeto de Pesquisa para Iniciação Científica}\\
- \textbf{Departamento de Engenharia Mecânica-Aeronáutica}\\
+ \textbf{Laboratório de Sistemas Computacionais Autônomos}\\
  \textbf{Instituto Tecnológico de Aeronáutica -- ITA}
  }
 
@@ -73,10 +73,9 @@
 
 %\thispagestyle{empty}
 \begin{abstract}
-\textcolor{blue}{Neste trabalho pretende-se aplicar adaptações em algoritmos de estabilização de caminhada em robô humanoide de baixo custo (ITAndroids Chape 2ª geração). Esse trabalho será realizado no  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), onde  existe um estudo de caminhada de robôs humanoide, Robotis OP2 e ITAndroids Chape.} %\textcolor{red}{Neste trabalho pretende-se desenvolver um pé robótico para com o objetivo de reduzir o gasto energético da marcha de  um robô humanoide de baixo custo (Robotis OP2). Esse trabalho será realizado no  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), onde  existe um estudo de caminhada do Robotis OP2 .} 
+\textcolor{blue}{Neste trabalho pretende-se aplicar adaptações em algoritmos de estabilização de caminhada em robô humanoide de baixo custo (ITAndroids Chape 2ª geração). Esse trabalho será realizado no  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), onde  existe um estudo de caminhada de robôs humanoide, Robotis OP2 e ITAndroids Chape.} 
 Em uma primeira etapa, será realizada um estudo das técnicas utilizadas previamente em estudos no LAB-SCA. Então, será estudado o código para projeto das malhas de controle de estabilização de caminhada a fim de adaptar o algoritmo para o robô Chape 2ª geração.
-A questão energética será abordada de tal maneira que uma nova geometria e novos materiais sejam utilizados para o desenvolvimento de um novo pé para o robô em operação permitindo realizar um rolamento natural semelhante ao que acontece na marcha humana. Para isso, primeiro será desenvolvido um simulador do novo pé robótico  e depois um projeto mecânico do novo pé com forma otimizada, ou seja, um pé leve que mantenha sua rigidez e que permita o rolamento e amortecimento, diminuindo não só a energia gasta como também as forças de impacto.
-Para análise desse novo comportamento serão determinadas as forças de impacto por sensores de pressão. Em seguida, a fim de validar esse novo pé robótico será proposto um algoritmo de caminhada que considere esse rolamento que será implementado no robô.
+
 %%%
 \end{abstract}
 %%%
@@ -89,9 +88,9 @@ Para análise desse novo comportamento serão determinadas as forças de impacto
 
 
 
-No contexto da robótica móvel existem diversos problemas a serem abordados e um que se destaca é o estudo de robôs humanoides, especificamente a questão da caminhada. \textcolor{blue}{O estudo de robôs humanoides tem motivação na movimentação de robôs por terrenos irregulares, destacando-se que os ambientes desenvolvidos pelo homem são propícios para bípedes. Desse modo, por mais que o controle de robôs com rodas seja mais simples e demonstrem alta eficência, o movimento é limitado a terrenos planos, sendo uma solução para o problema a caminhada de robôs com pernas.}
+No contexto da robótica móvel existem diversos problemas a serem abordados e um que se destaca é o estudo de robôs humanoides, especificamente a questão da caminhada. O estudo de robôs humanoides tem motivação na movimentação de robôs por terrenos irregulares, destacando-se que os ambientes desenvolvidos pelo homem são propícios para bípedes. Desse modo, por mais que o controle de robôs com rodas seja mais simples e demonstrem alta eficência, o movimento é limitado a terrenos planos, sendo uma solução para o problema a caminhada de robôs com pernas.
 
-\textcolor{blue}{Dos movimentos de robôs pernados, o movimento bípede do humanoide é de fundamental interesse exatamente pela proximidade ao movimento do ser humano.} Esse movimento é uma ação complexa do ponto de vista de controle, devido às não linearidades, a subatuação e  de ter alta dimensão dinâmica, ou seja, muitos graus de liberdade. Representando um grande desafio às técnicas de controle de última geração \cite{tedrake2005}.
+Dos movimentos de robôs com pernas, o movimento bípede do humanoide é de fundamental interesse exatamente pela proximidade ao movimento do ser humano. Esse movimento é uma ação complexa do ponto de vista de controle, devido às não linearidades, a subatuação e  de envolver uma dinâmica com alta dimensionalidade, ou seja, muitos graus de liberdade. Representando um grande desafio às técnicas de controle de última geração \cite{tedrake2005}.
 
 Uma primeira questão a ser analisada é a estabilidade estática dos bípedes é assegurada pela projeção de centro de massa (CM) no solo dentro de um polígono de suporte, definido na Literatura como a envoltória convexa dos pontos de contato no solo. Consequentemente, na estática, as forças de reação do solo atuam na vertical no ponto que equivale à projeção do CM para equilibrar as forças e momentos gerados pela gravidade, sendo o centro de pressão (CP) o ponto resultante das forças de reação.
 
@@ -99,39 +98,23 @@ Para desenvolver uma caminhada estável e rápida em robôs bípedes é necessá
 
 Quando em regime dinâmico o CM e o CP não coincidem, mas a aceleração do corpo auxilia na obtenção do equilíbrio. Por isso, na prática, para preservar a estabilidade basta delinear o movimento de maneira que o ZMP esteja sempre dentro do polígono de suporte. Na marcha há sempre um pé em contato com o solo em algum momento da caminhada e isso auxilia na transição para o apoio seguinte.
 
-Como robôs humanoides têm muitos graus de liberdade e sua dinâmica é não linear, o movimento se torna complexo por isso são usados modelos de ordem reduzida.  Por exemplo, com o 3D Linear Inverted Pendulum Model (3D-LIPM)\cite{kajita2001} pode se obter a trajetória do CM e depois, por cinemática inversa, determinar os ângulos das juntas durante a caminhada. Por causa das simplificações do modelo, frequentemente usam-se estratégias de realimentação e compensação de erro de dinâmica para o robô ter estabilidade \cite{yoshiike2009}.
+Como robôs humanoides têm muitos graus de liberdade e sua dinâmica é não linear, o movimento se torna complexo. Por isso, geralmente são usados modelos de ordem reduzida.  Por exemplo, com o 3D Linear Inverted Pendulum Model (3D-LIPM)\cite{kajita2001}, pode-se obter a trajetória do CM e depois, por cinemática inversa, determinar os ângulos das juntas durante a caminhada. Por causa das simplificações do modelo, frequentemente usam-se estratégias de realimentação e compensação de erro de dinâmica para o robô ter estabilidade \cite{yoshiike2009}.
 
 
-O que torna o robô humanoide tão atrativo é o fato de haver semelhança física com o ser humano, facilitando a interação com ferramentas e ambientes desenvolvidos para o uso humano. \textcolor{blue}{Por outro lado, os critérios exigidos na modelagem da caminhada de humanoide são altamente restritivos quanto à estabilidade. Os critérios utilizados mais corriqueiramente tratam da estabilidade local da caminhada, isto é, observa-se as condições de estabilidade para o estado atual do robô a cada passo, não para a caminhada como um todo, como é o caso do próprio ZMP.}
+Por outro lado, os critérios exigidos na modelagem da caminhada de humanoide são altamente restritivos quanto à estabilidade. Os critérios utilizados mais corriqueiramente tratam da estabilidade local da caminhada, isto é, observa-se as condições de estabilidade para o estado atual do robô a cada passo, não para a caminhada como um todo. O ZMP, por exemplo, trata-se de um critério que observa apenas a estabilidade local.
 
-\textcolor{blue}{O fato da análise de estabilidade ser tratada localmente tornam os critérios estabelecidos super restritivos, produzindo um movimento de caminhada muito aquém do melhor movimento quanto ao aproveitamento energético. Para comparação, estima-se que o robô ASIMO utiliza 10 vezes mais energia que um ser humano para caminhar.} \textcolor{green}{checar referência DOC manga, TEDRAKE 2004. REF [6] da proposta manga.} 
+O fato da análise de estabilidade ser tratada localmente tornam os critérios estabelecidos restritivos, produzindo um movimento de caminhada muito aquém do melhor movimento quanto ao aproveitamento energético. Para comparação, estima-se que o robô ASIMO utiliza 10 vezes mais energia que um ser humano para caminhar. \cite{tedrake2005}.
 
-\textcolor{blue}{Existem outros critérios mais gerais, como o "caminhada em ciclo limite",} \textcolor{green}{(checar ref, HOBBELEN)} \textcolor{blue}{que estabelecem movimentos instáveis a cada passo mas estáveis num ciclo completo de caminhada. Isto é, o ZMP deixa o polígono de suporte, acelerações angulares são geradas, mas movimentos posteriores a esse momento instável permitem que a caminhada continue. Este tipo de movimento exige uma análise de todo o percurso a ser tomado, tornando a execução pouco praticável.}
+Existem outros critérios mais gerais, como o ``caminhada em ciclo limite'', \cite{inbook} que estabelecem movimentos instáveis a cada passo mas estáveis num ciclo completo de caminhada. Isto é, o ZMP deixa o polígono de suporte, acelerações angulares são geradas, mas movimentos posteriores a esse momento instável permitem que a caminhada continue. Este tipo de movimento exige uma análise de todo o percurso a ser tomado, tornando a execução pouco praticável.
 
-\textcolor{blue}{Com as limitações expostas e ao observar os resultados obtidos com sucesso na prática} \textcolor{green}{(checar ref TEDRAKE, 2004),} \textcolor{blue}{caminhadas baseadas no critério ZMP mostramb-se como estado-da-arte, sendo o critério escolhido para estabilização de caminhada.}
+Com as limitações expostas e ao observar os resultados obtidos com sucesso na prática \cite{tedrake2005}, caminhadas baseadas no critério ZMP mostram-se como estado-da-arte, sendo o critério escolhido para estabilização de caminhada.
 
-%\textcolor{red}{ Porém a caminhada e a corrida estão longe de ser semelhante ao do ser humano, tornando-se um dos assuntos atuais da robótica móvel principalmente do ponto de vista energético. Por exemplo,  um  robô humanoide  avançado Asimo \cite{yoshiike2009}, que  utiliza o método do LIMP, gasta 10 vezes mais energia do que o ser humano \cite{tedrake2005} para caminhar.  }
-
-%\textcolor{red}{
-%Um dos fatores responsáveis dessa enorme diferença de gasto energético é o fato do pé humano rolar no chão durante  cada etapa de caminhada, mais ou menos análoga a uma roda, o CP avança no chão girando em torno de um ponto fixo. }
-
-%\textcolor{red}{
-%\textit{Adamczyk et al.} examinaram o gasto energético da caminhada para diferentes curvaturas do pé, construindo uma bota que restringe o movimento do tornozelo e varia o raio do arco rígido referente à sola \cite{adamczyk2006}. Por fim, mediu  o trabalho e o taxa metabólica para o redirecionamento do CM durante a marcha, em dez indivíduos caminhando com sete raios de diferentes curvaturas da bota.}
-%\textcolor{red}{
-%Comparando com um modelo simples de caminhada dinâmica, inferiu que pés rolantes com curvatura de 30\% do comprimento da perna  são energeticamente vantajosos para caminhar. Apesar desse movimento de rolamento parecer ajudar na economia de energia durante a marcha, os mecanismos dele não são claros. 
-%}
-%\textcolor{red}{
-%Novamente \textit{Adamczyk et al.} desenvolvem um modelo de caminhada dinâmica que prevê os efeitos energéticos ao alterar o comprimento do pé e o raio do pé \cite{adamczyk2013}. Realizando experimentos em oito indivíduos com o dispositivo desenvolvido em \cite{adamczyk2006}. O modelo do rolamento sugeriu que o trabalho da transição dos passos é pouco sensível ao tamanho do raio do arco do pé e varia aproximadamente com o quadrado do comprimento do pé.
-%}
-%\textcolor{red}{
-%No Brasil há pesquisadores abordando o estudo de bípedes. \textit{Siqueira e Terra} para obterem uma marcha antropomórfica utilizam controle não linear  \cite{terra2006} . \textit{Bianchi et al.} propõem aprendizagem por reforço para encontrar uma maneira automática de ajustar os valores dos parâmetros para a marcha de um humanoide \cite{bianchi2017}. 
-%}
 
 O grupo de pesquisa do Laboratório de Sistemas Computacionais Autônomos (LAB-SCA) do ITA tem desenvolvido estudos na área de caminhada de robôs humanoides\cite{max22,max25,max27,max28,tesemarcos}.
 No trabalho mais recente \cite{tesemarcos}, investigaram-se formulações baseadas em  Controle Preditivo  que permitem ao robô decidir a 
-trajetória do CM, as posições dos pés e durações dos passos.
+trajetória do CM, as posições dos pés e durações dos passos \cite{7759794}.
 
-\textcolor{blue}{Na figura \ref{FIG:darwinchape} a) pode ser visto um robô humanoide Robotis OP2 com o qual o grupo iniciou seus estudos em caminhada} \textcolor{green}{ref Protocolo FAPESP?}; \textcolor{blue}{na Figura \ref{FIG:darwinchape} b) observa-se o robô ITAndroids Chape 1ª geração, robô humanoide desenvolvido pelo LAB-SCA. Com os trabalhos desenvolvidos, faz-se essencial o desenvolvimento contínuo do projeto das malhas de controle de estabilização de caminhada.}
+Na figura \ref{FIG:darwinchape} (a) pode ser visto um robô humanoide Robotis OP2 com o qual o grupo iniciou seus estudos em caminhada; na Figura \ref{FIG:darwinchape} (b) observa-se o robô ITAndroids Chape 1ª geração, robô humanoide desenvolvido pelo LAB-SCA. Com os trabalhos desenvolvidos, faz-se essencial o desenvolvimento contínuo do projeto das malhas de controle de estabilização de caminhada.
 
 \begin{figure}[phtb]
 \centering
@@ -142,18 +125,16 @@ trajetória do CM, as posições dos pés e durações dos passos.
 \label{FIG:darwinchape}
 \end{figure}
 
-\textcolor{blue}{De modo geral, o movimento periódico da caminhada é resolvido em termos de controle com uma sequência de algoritmos que formam uma malha de controle fechada. Uma visão geral da arquitetura da malha de controle pode ser vista na Figura \ref{FIG: doc manga}. Tem-se como entrada um vetor de velocidade omnidirecional desejado, para ser gerado no planejador de passos as posições e tempos da marcha. Com o planejamento definido, utiliza-se um algoritmo gerador de trajetórias baseado na posição do ZMP de acordo com o pé de apoio (Gerador de Trajetórias ZMP, na Figura \ref{FIG: doc manga}). Planeja-se ainda a trajetória do centro de massa (com retorno de sensores sobre posição, velocidade e aceleração para o controle) e do pé de balanço, aquele não em contato com o solo no passo, a fim de definir totalmente as trajetórias a ser cumpridas.}
+De modo geral, o movimento periódico da caminhada é resolvido em termos de controle com uma sequência de algoritmos que formam uma malha de controle fechada. Uma visão geral da arquitetura da malha de controle pode ser vista na Figura \ref{FIG: doc manga}. Tem-se como entrada um vetor de velocidade omnidirecional desejado, para ser gerado no planejador de passos as posições e tempos da marcha. Com o planejamento definido, utiliza-se um algoritmo gerador de trajetórias baseado na posição do ZMP de acordo com o pé de apoio (Gerador de Trajetórias ZMP, na Figura \ref{FIG: doc manga}). Planeja-se ainda a trajetória do CM (com retorno de sensores sobre posição, velocidade e aceleração para o controle) e do pé de balanço, aquele não em contato com o solo no passo, a fim de definir totalmente as trajetórias a serem cumpridas.
 
-\textcolor{blue}{Solucionado o movimento desejado, entra o algoritmo Solucionador de Cinemática Inversa, que orienta as posições desejadas nos membros e juntas do robô (orientados por servo-motores). Além de resolver a cinemática, fazem-se necessários ainda dois passos na malha de controle, representados pelo compensador de gravidade e pelo compensador de orientação do torso.}
+Solucionado o movimento desejado, entra o algoritmo Solucionador de Cinemática Inversa, que calcula as posições necessárias das juntas para que os pés fiquem na posição desejada. Além de resolver a cinemática, fazem-se necessários ainda dois passos na malha de controle, representados pelo compensador de gravidade e pelo compensador de orientação do torso.
 
-\textcolor{blue}{A necessidade do compensador de gravidade surge da atuação de torques indesejados nas juntas do robô causados pela aceleração da gravidade e é implementado em momentos de suporte único no passo (isto é, quando o robô tem uma perna suporte e outra livre de contato com o solo). Já o compensador de orientação do torso surge principalmente de erros de medidas ou de perturbações externas e é implementado com um algoritmo que observa a posição do torso em cada passo utilizando Filtro de Kalman para o tratamento dos dados oriundos dos sensores.} \textcolor{green}{encher de referências.}
-
-Essas formulações demonstraram expandir consideravelmente a margem de tolerância e perturbações do robô (i.e. o robô é capaz de tomar empurrões muito mais fortes sem cair) em comparação a uma formulação do estado da arte que trabalha com duração fixa de passo \cite{max30}. Essa característica foi comprovada tanto em simulações simplificadas usando o consagrado modelo de pêndulo invertido \cite{kajita2001} para modelar o robô, quanto no simulador de robótica Gazebo, onde foi utilizado um modelo de simulação realista do robô humanoide Robotis OP2, desenvolvido pelo grupo a partir de dados do fabricante e de resultados de ensaios com os atuadores \cite{max27}. 
+A necessidade do compensador de gravidade surge da atuação de torques indesejados nas juntas do robô causados pela aceleração da gravidade e é implementado em momentos de suporte único no passo (isto é, quando o robô tem uma perna suporte e outra livre de contato com o solo) e de suporte duplo (considerando este uma combinação das soluções para as pernas direita e esquerda consideradas, para cada solução, como único pé de suporte). Já o compensador de orientação do torso surge principalmente para compensar erros de medidas ou de perturbações externas. Este é implementado com uma malha de controle P+V. O algoritmo para o compensador de orientação de torso, por sua vez, observa a posição do torso em cada passo utilizando Filtro de Kalman Estendido (EKF) para o tratamento dos dados oriundos dos sensores \cite{tesemarcos}.
  
 \begin{figure} 
 	\centering
-	\includegraphics[width=0.6\textwidth]{walking_engine_overview.png}
-	\caption{\textcolor{blue}{Protótipo do pé protético desenvolvido pelo LBRSC.}}
+	\includegraphics[angle=90, scale = 0.75]{walking_engine_overview.eps}
+	\caption{Visão geral do controle de caminhada.}
 	\label{FIG: doc manga}
 %\label{Rotulo}
 \end{figure} 

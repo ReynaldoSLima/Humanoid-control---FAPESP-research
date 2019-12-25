@@ -18,75 +18,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: main-blx.bib
 Database file #2: refs.bib
-A bad cross reference---entry "herdt2013"
-refers to entry "conf/humanoids/2012", which doesn't exist
-Warning--I didn't find a database entry for "conf/humanoids/2012"
 Biblatex version: 3.8
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Name 1 in "Porto Alegre, Brasil," has a comma at the end for entry max22
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Daejeon, Cor\'{e}ia," has a comma at the end for entry max25
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Porto Alegre, Brasil," has a comma at the end for entry max27
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Orlando, EUA," has a comma at the end for entry jonhie2006
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Salvador, Brasil," has a comma at the end for entry conem2018
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Estocolmo, Su\'{e}cia," has a comma at the end for entry sola2016
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Estocolmo, Su\'{e}cia," has a comma at the end for entry hertz2016
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Nagoya, Japão," has a comma at the end for entry curvo20017
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Daejeon, Cor\'{e}ia," has a comma at the end for entry movi2016
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Coimbra, Portugal," has a comma at the end for entry protese2017
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Vila Real, Portugal," has a comma at the end for entry cinemetria2017
-while executing---line 2749 of file biblatex.bst
-Name 1 in "Natal, Brasil," has a comma at the end for entry gripp
-while executing---line 2749 of file biblatex.bst
-You've used 32 entries,
+You've used 17 entries,
             6268 wiz_defined-function locations,
-            1348 strings with 14680 characters,
-and the built_in function-call counts, 240356 in all, are:
-= -- 18801
-> -- 4309
-< -- 1204
-+ -- 6178
-- -- 1586
-* -- 17970
-:= -- 25133
+            1274 strings with 11506 characters,
+and the built_in function-call counts, 120150 in all, are:
+= -- 9067
+> -- 2254
+< -- 504
++ -- 3168
+- -- 912
+* -- 9349
+:= -- 13021
 add.period$ -- 0
-call.type$ -- 32
-change.case$ -- 768
-chr.to.int$ -- 30
-cite$ -- 62
-duplicate$ -- 23086
-empty$ -- 21502
-format.name$ -- 2563
-if$ -- 49805
+call.type$ -- 17
+change.case$ -- 247
+chr.to.int$ -- 31
+cite$ -- 32
+duplicate$ -- 11664
+empty$ -- 10741
+format.name$ -- 1402
+if$ -- 24580
 int.to.chr$ -- 0
-int.to.str$ -- 88
+int.to.str$ -- 45
 missing$ -- 0
-newline$ -- 1132
-num.names$ -- 1784
-pop$ -- 11083
+newline$ -- 605
+num.names$ -- 774
+pop$ -- 5759
 preamble$ -- 1
-purify$ -- 1050
+purify$ -- 403
 quote$ -- 0
-skip$ -- 6665
+skip$ -- 3131
 stack$ -- 0
-substring$ -- 34824
-swap$ -- 5063
-text.length$ -- 802
+substring$ -- 16854
+swap$ -- 2554
+text.length$ -- 447
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1041
+type$ -- 561
 warning$ -- 0
-while$ -- 2692
+while$ -- 1437
 width$ -- 0
-write$ -- 1101
-(There were 13 error messages)
+write$ -- 589
