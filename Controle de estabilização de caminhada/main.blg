@@ -21,44 +21,47 @@ Database file #2: refs.bib
 Biblatex version: 3.8
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 17 entries,
+Name 1 in "Addison-Wesley Pub. Co.," has a comma at the end for entry craig1986
+while executing---line 2749 of file biblatex.bst
+You've used 23 entries,
             6268 wiz_defined-function locations,
-            1274 strings with 11506 characters,
-and the built_in function-call counts, 120150 in all, are:
-= -- 9067
-> -- 2254
-< -- 504
-+ -- 3168
-- -- 912
-* -- 9349
-:= -- 13021
+            1315 strings with 14160 characters,
+and the built_in function-call counts, 172798 in all, are:
+= -- 13196
+> -- 3202
+< -- 742
++ -- 4724
+- -- 1291
+* -- 13369
+:= -- 18842
 add.period$ -- 0
-call.type$ -- 17
-change.case$ -- 247
-chr.to.int$ -- 31
-cite$ -- 32
-duplicate$ -- 11664
-empty$ -- 10741
-format.name$ -- 1402
-if$ -- 24580
+call.type$ -- 23
+change.case$ -- 383
+chr.to.int$ -- 41
+cite$ -- 44
+duplicate$ -- 17115
+empty$ -- 15222
+format.name$ -- 2007
+if$ -- 35154
 int.to.chr$ -- 0
-int.to.str$ -- 45
+int.to.str$ -- 62
 missing$ -- 0
-newline$ -- 605
-num.names$ -- 774
-pop$ -- 5759
+newline$ -- 884
+num.names$ -- 1107
+pop$ -- 8003
 preamble$ -- 1
-purify$ -- 403
+purify$ -- 612
 quote$ -- 0
-skip$ -- 3131
+skip$ -- 4422
 stack$ -- 0
-substring$ -- 16854
-swap$ -- 2554
-text.length$ -- 447
+substring$ -- 24295
+swap$ -- 3688
+text.length$ -- 617
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 561
+type$ -- 765
 warning$ -- 0
-while$ -- 1437
+while$ -- 2124
 width$ -- 0
-write$ -- 589
+write$ -- 862
+(There was 1 error message)

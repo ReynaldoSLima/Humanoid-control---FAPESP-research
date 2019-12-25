@@ -152,7 +152,7 @@
       }}%
     }
     \strng{namehash}{TTMTYT1}
-    \strng{fullhash}{TTMTYT1}
+    \strng{fullhash}{TTMTYT2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{booktitle}{Proc. Int. Conf. Intelligent Robots and Systems}
@@ -165,45 +165,47 @@
     \field{year}{2009}
   \endentry
 
-  \entry{7759794}{inproceedings}{}
-    \name{author}{3}{}{%
-      {{hash=MMROA}{%
-         family={{Maximo}},
-         familyi={M\bibinitperiod},
-         given={M.\bibnamedelima R. O.\bibnamedelima A.},
-         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod
-  O\bibinitperiod\bibinitdelim A\bibinitperiod},
+  \entry{inbook}{inbook}{}
+    \name{author}{5}{}{%
+      {{hash=NNJV}{%
+         family={Núñez\bibnamedelima Nalda},
+         familyi={N\bibinitperiod\bibinitdelim N\bibinitperiod},
+         given={Jose\bibnamedelima Victor},
+         giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod},
       }}%
-      {{hash=RCHC}{%
-         family={{Ribeiro}},
-         familyi={R\bibinitperiod},
-         given={C.\bibnamedelima H.\bibnamedelima C.},
-         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
-  C\bibinitperiod},
+      {{hash=YK}{%
+         family={Yokoi},
+         familyi={Y\bibinitperiod},
+         given={Kazuhito},
+         giveni={K\bibinitperiod},
       }}%
-      {{hash=ARJM}{%
-         family={{Afonso}},
-         familyi={A\bibinitperiod},
-         given={R.\bibnamedelima J.\bibnamedelima M.},
-         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
-  M\bibinitperiod},
+      {{hash=GN}{%
+         family={Gauthier},
+         familyi={G\bibinitperiod},
+         given={Nelly},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=BP}{%
+         family={Blazevic},
+         familyi={B\bibinitperiod},
+         given={Pierre},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SO}{%
+         family={Stasse},
+         familyi={S\bibinitperiod},
+         given={Olivier},
+         giveni={O\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MMROARCHCARJM1}
-    \strng{fullhash}{MMROARCHCARJM1}
+    \strng{namehash}{NNJVYKGN+1}
+    \strng{fullhash}{NNJVYKGNBPSO1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{booktitle}{2016 IEEE/RSJ International Conference on Intelligent
-  Robots and Systems (IROS)}
-    \verb{doi}
-    \verb 10.1109/IROS.2016.7759794
-    \endverb
-    \field{issn}{2153-0866}
-    \field{pages}{5399\bibrangedash 5404}
-    \field{title}{Mixed-integer programming for automatic walking step
-  duration}
-    \field{year}{2016}
-    \warn{\item Invalid format of field 'month'}
+    \field{pages}{175\bibrangedash 190}
+    \field{title}{Humanoid Robots Human-like Machines}
+    \field{month}{01}
+    \field{year}{2007}
   \endentry
 
   \entry{max22}{inproceedings}{}
@@ -230,8 +232,8 @@
   M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MMROARCHCARJM2}
-    \strng{fullhash}{MMROARCHCARJM2}
+    \strng{namehash}{MMROARCHCARJM1}
+    \strng{fullhash}{MMROARCHCARJM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{booktitle}{Simp\'{o}sio Brasileiro de Automa\c{c}\~{a}o Inteligente}
@@ -304,8 +306,8 @@
   M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MMROARCHCARJM2}
-    \strng{fullhash}{MMROARCHCARJM2}
+    \strng{namehash}{MMROARCHCARJM1}
+    \strng{fullhash}{MMROARCHCARJM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{booktitle}{Simp\'{o}sio Brasileiro de Automa\c{c}\~{a}o Inteligente}
@@ -372,46 +374,45 @@
     \field{year}{2017}
   \endentry
 
-  \entry{max30}{article}{}
-    \name{author}{4}{}{%
-      {{hash=aHDAH}{%
-         prefix={ande},
-         prefixi={a\bibinitperiod},
-         family={H.\bibnamedelima Diedam},
-         familyi={H\bibinitperiod\bibinitdelim D\bibinitperiod},
-         given={A.\bibnamedelima Herdt},
-         giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
-      }}%
-      {{hash=PBWDD}{%
-         family={P.-B.\bibnamedelima Wieber},
-         familyi={P\bibinitperiod-B\bibinitperiod\bibinitdelim
-  W\bibinitperiod},
-         given={D.\bibnamedelima Dimitrov},
-         giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=MK}{%
-         family={Mombaur},
+  \entry{7759794}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=MMROA}{%
+         family={{Maximo}},
          familyi={M\bibinitperiod},
-         given={K.},
-         giveni={K\bibinitperiod},
+         given={M.\bibnamedelima R. O.\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod
+  O\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
-      {{hash=DM}{%
-         family={Diehl},
-         familyi={D\bibinitperiod},
-         given={M.},
-         giveni={M\bibinitperiod},
+      {{hash=RCHC}{%
+         family={{Ribeiro}},
+         familyi={R\bibinitperiod},
+         given={C.\bibnamedelima H.\bibnamedelima C.},
+         giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
+  C\bibinitperiod},
+      }}%
+      {{hash=ARJM}{%
+         family={{Afonso}},
+         familyi={A\bibinitperiod},
+         given={R.\bibnamedelima J.\bibnamedelima M.},
+         giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{HDAHaPBWDDMK+1}
-    \strng{fullhash}{HDAHaPBWDDMKDM1}
+    \strng{namehash}{MMROARCHCARJM2}
+    \strng{fullhash}{MMROARCHCARJM2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{number}{5--6}
-    \field{title}{Online walking motion generation with automatic foot step
-  placement}
-    \field{volume}{24}
-    \field{journaltitle}{Advanced Robotics}
-    \field{year}{2010}
+    \field{booktitle}{2016 IEEE/RSJ International Conference on Intelligent
+  Robots and Systems (IROS)}
+    \verb{doi}
+    \verb 10.1109/IROS.2016.7759794
+    \endverb
+    \field{issn}{2153-0866}
+    \field{pages}{5399\bibrangedash 5404}
+    \field{title}{Mixed-integer programming for automatic walking step
+  duration}
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{kajita2003}{inproceedings}{}
@@ -601,31 +602,337 @@
     \field{year}{2012}
   \endentry
 
-  \entry{adamczyk2013}{article}{}
-    \name{author}{2}{}{%
-      {{hash=APG}{%
-         family={Adamczyk},
-         familyi={A\bibinitperiod},
-         given={Peter\bibnamedelima G.},
-         giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod},
+  \entry{silva2019}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=dSCCD}{%
+         prefix={da},
+         prefixi={d\bibinitperiod},
+         family={Silva},
+         familyi={S\bibinitperiod},
+         given={Caroline Cristine\bibnamedelima Duarte},
+         giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  D\bibinitperiod},
       }}%
-      {{hash=KAD}{%
-         family={Kuo},
-         familyi={K\bibinitperiod},
-         given={Arthur\bibnamedelima D.},
-         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      {{hash=MMROA}{%
+         family={Maximo},
+         familyi={M\bibinitperiod},
+         given={Marcos R. O.\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod
+  O\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=GLCS}{%
+         family={G\'{o}es},
+         familyi={G\bibinitperiod},
+         given={Luiz C.\bibnamedelima S.},
+         giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  S\bibinitperiod},
       }}%
     }
-    \strng{namehash}{APGKAD1}
-    \strng{fullhash}{APGKAD1}
+    \strng{namehash}{SCCDdMMROAGLCS1}
+    \strng{fullhash}{SCCDdMMROAGLCS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{2722\bibrangedash 2731}
-    \field{title}{Mechanical and energetic consequences of rolling foot shape
-  in human walking}
-    \field{volume}{216}
-    \field{journaltitle}{The Journal of Experimental Biology}
-    \field{year}{2013}
+    \field{booktitle}{Latin American Robotics Symposium}
+    \field{title}{{Height Varying Humanoid Robot Walking through Model
+  Predictive Control}}
+    \list{location}{1}{%
+      {Rio Grande, Brazil}%
+    }
+    \field{year}{2019}
+  \endentry
+
+  \entry{naveau2017}{article}{}
+    \name{author}{6}{}{%
+      {{hash=NM}{%
+         family={{Naveau}},
+         familyi={N\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={{Kudruss}},
+         familyi={K\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SO}{%
+         family={{Stasse}},
+         familyi={S\bibinitperiod},
+         given={O.},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=KC}{%
+         family={{Kirches}},
+         familyi={K\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MK}{%
+         family={{Mombaur}},
+         familyi={M\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={{Souères}},
+         familyi={S\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \keyw{collision avoidance;humanoid robots;nonlinear control
+  systems;predictive control;whole-body dynamics;convex obstacle
+  avoidance;position controlled humanoid robots;NMPC;real-time nonlinear model
+  predictive control;reactive walking pattern generator;Legged
+  locomotion;Real-time systems;Humanoid robots;Generators;Trajectory;Robot
+  kinematics;Humanoid and Bipedal Locomotion;Humanoid Robots;Nonlinear Model
+  Predictive Control;Humanoid and Bipedal Locomotion;Humanoid Robots;Nonlinear
+  Model Predictive Control}
+    \strng{namehash}{NMKMSO+1}
+    \strng{fullhash}{NMKMSOKCMKSP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/LRA.2016.2518739
+    \endverb
+    \field{issn}{2377-3774}
+    \field{number}{1}
+    \field{pages}{10\bibrangedash 17}
+    \field{title}{A Reactive Walking Pattern Generator Based on Nonlinear Model
+  Predictive Control}
+    \field{volume}{2}
+    \field{journaltitle}{IEEE Robotics and Automation Letters}
+    \field{year}{2017}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{silva2019b}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=dSCCD}{%
+         prefix={da},
+         prefixi={d\bibinitperiod},
+         family={Silva},
+         familyi={S\bibinitperiod},
+         given={Caroline C.\bibnamedelima D.},
+         giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  D\bibinitperiod},
+      }}%
+      {{hash=dFDV}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Faria},
+         familyi={F\bibinitperiod},
+         given={Daniela\bibnamedelima V.},
+         giveni={D\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=BDHV}{%
+         family={Barroso},
+         familyi={B\bibinitperiod},
+         given={Davi H.\bibnamedelima V.},
+         giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
+  V\bibinitperiod},
+      }}%
+      {{hash=MMROA}{%
+         family={Maximo},
+         familyi={M\bibinitperiod},
+         given={Marcos R. O.\bibnamedelima A.},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod
+  O\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=GLCS}{%
+         family={G\'{o}es},
+         familyi={G\bibinitperiod},
+         given={Luiz C.\bibnamedelima S.},
+         giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SCCDdFDVdBDHV+1}
+    \strng{fullhash}{SCCDdFDVdBDHVMMROAGLCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 2019 ABCM International Congress of
+  Mechanical Engineering (COBEM)}
+    \field{title}{{Three-Dimensional Identification of a Humanoid Robot}}
+    \field{year}{2019}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{craig1986}{book}{}
+    \name{author}{1}{}{%
+      {{hash=C}{%
+         family={Craig},
+         familyi={C\bibinitperiod},
+         given={1955},
+         giveni={\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Addison-Wesley Pub. Co.,}%
+    }
+    \keyw{629.892 CRAI}
+    \strng{namehash}{C1}
+    \strng{fullhash}{C1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{0201103265}
+    \field{note}{Includes bibliographies and index.}
+    \field{title}{Introduction to robotics : mechanics \& control / John J.
+  Craig.}
+    \list{location}{1}{%
+      {Reading, Mass.}%
+    }
+    \field{year}{1986}
+  \endentry
+
+  \entry{takenaka2009}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=TT}{%
+         family={{Takenaka}},
+         familyi={T\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={{Matsumoto}},
+         familyi={M\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=YT}{%
+         family={{Yoshiike}},
+         familyi={Y\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \keyw{error compensation;legged locomotion;motion control;robot
+  dynamics;real time motion generation;real time motion control;biped
+  robot;knee dynamics error compensation;Motion control;Robot
+  control;Knee;Error compensation;Legged locomotion;Intelligent robots;Real
+  time systems;USA Councils;Control systems;Error correction}
+    \strng{namehash}{TTMTYT1}
+    \strng{fullhash}{TTMTYT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2009 IEEE/RSJ International Conference on Intelligent
+  Robots and Systems}
+    \verb{doi}
+    \verb 10.1109/IROS.2009.5354542
+    \endverb
+    \field{issn}{2153-0866}
+    \field{pages}{1594\bibrangedash 1600}
+    \field{title}{Real time motion generation and control for biped robot -3rd
+  report: Dynamics error compensation-}
+    \field{year}{2009}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{takenaka2009b}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=TT}{%
+         family={{Takenaka}},
+         familyi={T\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={{Matsumoto}},
+         familyi={M\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=YT}{%
+         family={{Yoshiike}},
+         familyi={Y\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={{Hasegawa}},
+         familyi={H\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={{Shirokura}},
+         familyi={S\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KH}{%
+         family={{Kaneko}},
+         familyi={K\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={{Orita}},
+         familyi={O\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{feedback;legged locomotion;real time motion generation;biped
+  robot;integrated balance control;varying vertical ground reaction
+  force;horizontal ground reaction force;moment limits;feedback gains;ZMP
+  control method;robust biped running;Motion control;Robot
+  control;Foot;Acceleration;Force control;Robustness;Intelligent robots;Control
+  systems;Resists;Hip}
+    \strng{namehash}{TTMTYT+1}
+    \strng{fullhash}{TTMTYTHTSSKHOA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2009 IEEE/RSJ International Conference on Intelligent
+  Robots and Systems}
+    \verb{doi}
+    \verb 10.1109/IROS.2009.5354522
+    \endverb
+    \field{issn}{2153-0866}
+    \field{pages}{1601\bibrangedash 1608}
+    \field{title}{Real time motion generation and control for biped robot -4th
+  report: Integrated balance control-}
+    \field{year}{2009}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{kajita2014}{book}{}
+    \name{author}{4}{}{%
+      {{hash=KS}{%
+         family={Kajita},
+         familyi={K\bibinitperiod},
+         given={Shuuji},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Hirukawa},
+         familyi={H\bibinitperiod},
+         given={Hirohisa},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=HK}{%
+         family={Harada},
+         familyi={H\bibinitperiod},
+         given={Kensuke},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=YK}{%
+         family={Yokoi},
+         familyi={Y\bibinitperiod},
+         given={Kazuhito},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Publishing Company, Incorporated}%
+    }
+    \strng{namehash}{KSHHHK+1}
+    \strng{fullhash}{KSHHHKYK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{3642545351, 9783642545351}
+    \field{title}{Introduction to Humanoid Robotics}
+    \field{year}{2014}
   \endentry
 \enddatalist
 \endinput
