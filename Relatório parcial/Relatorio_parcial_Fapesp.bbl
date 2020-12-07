@@ -64,30 +64,6 @@
     \field{year}{2001}
   \endentry
 
-  \entry{nasareport}{article}{}
-    \name{author}{1}{}{%
-      {{hash=CJ}{%
-         family={Chen},
-         familyi={C\bibinitperiod},
-         given={J.},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CJ1}
-    \strng{fullhash}{CJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 19900020545
-    \endverb
-    \field{title}{The effects of gear reduction on robot dynamics}
-    \field{volume}{4}
-    \field{journaltitle}{JPL, California Inst. of Tech., Proceedings of the
-  NASA Conference on Space Telerobotics}
-    \field{month}{01}
-    \field{year}{1989}
-  \endentry
-
   \entry{craig1986}{book}{}
     \name{author}{1}{}{%
       {{hash=C}{%
@@ -113,6 +89,150 @@
       {Reading, Mass.}%
     }
     \field{year}{1986}
+  \endentry
+
+  \entry{siciliano2008}{book}{}
+    \name{author}{4}{}{%
+      {{hash=SB}{%
+         family={Siciliano},
+         familyi={S\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Sciavicco},
+         familyi={S\bibinitperiod},
+         given={Lorenzo},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=VL}{%
+         family={Villani},
+         familyi={V\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=OG}{%
+         family={Oriolo},
+         familyi={O\bibinitperiod},
+         given={Giuseppe},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Publishing Company, Incorporated}%
+    }
+    \strng{namehash}{SBSLVL+1}
+    \strng{fullhash}{SBSLVLOG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{1st}
+    \field{isbn}{1846286417}
+    \field{title}{Robotics: Modelling, Planning and Control}
+    \field{year}{2008}
+  \endentry
+
+  \entry{1389727}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=KN}{%
+         family={{Koenig}},
+         familyi={K\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={{Howard}},
+         familyi={H\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KNHA1}
+    \strng{fullhash}{KNHA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2004 IEEE/RSJ International Conference on Intelligent
+  Robots and Systems (IROS) (IEEE Cat. No.04CH37566)}
+    \verb{doi}
+    \verb 10.1109/IROS.2004.1389727
+    \endverb
+    \field{pages}{2149\bibrangedash 2154 vol.3}
+    \field{title}{Design and use paradigms for Gazebo, an open-source
+  multi-robot simulator}
+    \field{volume}{3}
+    \field{year}{2004}
+  \endentry
+
+  \entry{vukobratovic2004}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VM}{%
+         family={Vukobratovi\'{c}},
+         familyi={V\bibinitperiod},
+         given={Miomir},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BB}{%
+         family={Borovac},
+         familyi={B\bibinitperiod},
+         given={Branislav},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VMBB1}
+    \strng{fullhash}{VMBB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{157 \bibrangedash  173}
+    \field{title}{{Zero-Moment Point -- Thirty Five Years of Its Life}}
+    \field{volume}{1}
+    \field{journaltitle}{Int. J. Humanoid Robots}
+    \field{year}{2004}
+  \endentry
+
+  \entry{nasareport}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CJ}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CJ1}
+    \strng{fullhash}{CJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 19900020545
+    \endverb
+    \field{title}{The effects of gear reduction on robot dynamics}
+    \field{volume}{4}
+    \field{journaltitle}{JPL, California Inst. of Tech., Proceedings of the
+  NASA Conference on Space Telerobotics}
+    \field{month}{01}
+    \field{year}{1989}
+  \endentry
+
+  \entry{tesemarcos}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=MM}{%
+         family={Maximo},
+         familyi={M\bibinitperiod},
+         given={Marcos},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MM1}
+    \strng{fullhash}{MM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Automatic walking step duration through model predictive
+  control}}
+    \list{institution}{1}{%
+      {Instituto Tecnol\'{o}gico de Aeron\'{a}utica}%
+    }
+    \field{type}{Tese de Doutorado}
+    \field{year}{2017}
   \endentry
 
   \entry{siciliano}{article}{}
@@ -152,26 +272,72 @@
     \field{year}{1995}
   \endentry
 
-  \entry{tesemarcos}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=MM}{%
-         family={Maximo},
-         familyi={M\bibinitperiod},
-         given={Marcos},
-         giveni={M\bibinitperiod},
+  \entry{franklin2013}{book}{}
+    \name{author}{3}{}{%
+      {{hash=FGF}{%
+         family={Franklin},
+         familyi={F\bibinitperiod},
+         given={Gene\bibnamedelima F.},
+         giveni={G\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=PJD}{%
+         family={Powell},
+         familyi={P\bibinitperiod},
+         given={J.\bibnamedelima David},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=ENA}{%
+         family={Emami-Naeini},
+         familyi={E\bibinithyphendelim N\bibinitperiod},
+         given={Abbas},
+         giveni={A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MM1}
-    \strng{fullhash}{MM1}
+    \list{publisher}{1}{%
+      {Bookman}%
+    }
+    \strng{namehash}{FGFPJDENA1}
+    \strng{fullhash}{FGFPJDENA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{{Automatic walking step duration through model predictive
-  control}}
-    \list{institution}{1}{%
-      {Instituto Tecnol\'{o}gico de Aeron\'{a}utica}%
+    \field{edition}{6th}
+    \field{isbn}{978-85-8260-067-2}
+    \field{title}{Sistemas de Controle para Engenharia}
+    \field{year}{2013}
+  \endentry
+
+  \entry{lagarias1998}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LJ}{%
+         family={Lagarias},
+         familyi={L\bibinitperiod},
+         given={J.C.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RMH}{%
+         family={Reeds},
+         familyi={R\bibinitperiod},
+         given={M.\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Wright},
+         familyi={W\bibinitperiod},
+         given={P.E.},
+         giveni={P\bibinitperiod},
+      }}%
     }
-    \field{type}{Tese de Doutorado}
-    \field{year}{2017}
+    \strng{namehash}{LJRMHWP1}
+    \strng{fullhash}{LJRMHWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{112\bibrangedash 147}
+    \field{title}{Convergence Properties of the Nelder-Mead Simplex Method in
+  Low Dimensions}
+    \field{volume}{4}
+    \field{journaltitle}{SIAM Journal of Optimization}
+    \field{year}{1998}
   \endentry
 
   \entry{NoceWrig06}{book}{}
@@ -238,6 +404,28 @@
       {Porto Alegre, Brasil}%
     }
     \field{year}{2017}
+  \endentry
+
+  \entry{ogata2010}{book}{}
+    \name{author}{1}{}{%
+      {{hash=OK}{%
+         family={Ogata},
+         familyi={O\bibinitperiod},
+         given={Katsuhiko},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Prentice Hall}%
+    }
+    \strng{namehash}{OK1}
+    \strng{fullhash}{OK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{5th}
+    \field{isbn}{0-13-615673-8}
+    \field{title}{Modern Control Engineering}
+    \field{year}{2010}
   \endentry
 \enddatalist
 \endinput

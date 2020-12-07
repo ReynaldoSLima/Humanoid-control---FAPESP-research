@@ -34,14 +34,14 @@
 
 \title{\textbf{Relatório Parcial de Atividades
 \\
-\vspace{30px}
+\vspace{20px}
 Controle de Estabilização de Caminhada de Robô Humanoide
 }\\
-\vspace{30px}
+\vspace{20px}
 \normalsize \textbf{Bolsa de Iniciação Científica 
 2020/04559-6}\\
 \normalsize \textbf{Período relatado: 01/07/2020 a 10/12/2020}\\
- \textbf{Laboratório de Sistemas Computacionais Autônomos}\\
+\normalsize \textbf{Período de vigência: 01/07/2020 a 30/06/2021}\\
  \textbf{Instituto Tecnológico de Aeronáutica -- ITA}
  }
 
@@ -71,18 +71,12 @@ Controle de Estabilização de Caminhada de Robô Humanoide
 
 \begin{document}
 \maketitle
-
 %\newpage
 %\maketitle
-
 \thispagestyle{empty}
-
 \selectlanguage{brazil}
 \begin{abstract}
-Neste trabalho estudam-se adaptações em algoritmos de estabilização de caminhada em robô humanoide de baixo custo (ITAndroids Chape 1ª e 2ª gerações). Esse trabalho será realizado no  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), onde  existe um estudo de caminhada de robôs humanoide. São apresentados aspectos importantes do modelo em baixo nível do controle, com a equação do manipulador. Dá-se destaque a termos de inércia que comummente são omitidos na literatura e que são relevantes para a aplicação de robôs humanoides. Estudam-se, ainda, métodos de otimização e suas aplicações. O código já utilizado serve como ponto de estudo, com o objetivo de encontrar possíveis otimizações como também de adaptá-lo para o robô Chape 2ª geração.
-
-%Utilizar-se-á do simulador Gazebo, já utilizado em trabalhos realizados no LAB-SCA, para validar a estabilização implementada e os ajustes de desempenho empregados. Com a validação no simulador, pretende-se realizar ensaios com o robô real, verificando a efetividade do trabalho desenvolvido com o auxílio de unidade inercial embarcada dos robôs.
-
+Neste trabalho estudam-se adaptações em algoritmos de estabilização de caminhada em robô humanoide de baixo custo (ITAndroids Chape 1ª e 2ª gerações). Esse trabalho será realizado no  Laboratório de Sistemas Computacionais Autônomos (LAB-SCA), onde desenvolvem-se robôs humanoides. São apresentados aspectos importantes do modelo em baixo nível do controle, com a equação do manipulador. Dá-se destaque a termos de inércia que comummente são omitidos na literatura e que são relevantes para sistemas que possuem altas reduções em seus atuadores, como é comum em robôs humanoides acionados por motores elétricos. Estudam-se, ainda, métodos de otimização e suas aplicações. O código já utilizado serve como ponto de estudo, com o objetivo de encontrar possíveis otimizações como também de adaptá-lo para o robô Chape 2ª geração.
 
 \noindent \textbf{Palavras chaves:} Caminhada de robôs humanoides, Controle, Robótica.
 
@@ -98,11 +92,10 @@ Neste trabalho estudam-se adaptações em algoritmos de estabilização de camin
 \doublespacing
 %%%%%%
 \section{Resumo do plano inicial}
-%\label{secao:plano_inicial}
 
 O plano inicial, do trabalho de 12 meses, com início em julho de 2020, dividido em execução nas atividades listadas a seguir:
 \begin{enumerate}[A]
-\item{Estudo introdutório a matéria de controle;}
+\item{Estudo introdutório da matéria de controle;}
 \item{Estudo sobre algoritmos de otimização;}
 \item{Estudo sobre a caminhada do robô humanoide;}
 \item{Estudo detalhado do código do robô humanoide relacionado ao seu caminhar, organização do código e início dos planos de otimização;}
@@ -145,7 +138,7 @@ O plano inicial, do trabalho de 12 meses, com início em julho de 2020, dividido
 Até o momento, foram realizadas as seguintes atividades:
 
 \begin{enumerate}[A]
-\item{Estudo introdutório a matéria de controle;}
+\item{Estudo introdutório da matéria de controle;}
 \item{Estudo sobre algoritmos de otimização;}
 \item{Estudo sobre a caminhada do robô humanoide;}
 \item{Estudo detalhado do código do robô humanoide relacionado ao seu caminhar, organização do código e início dos planos de otimização;}
@@ -154,17 +147,20 @@ Até o momento, foram realizadas as seguintes atividades:
 
 Vale ressaltar que o item D foi apenas iniciado, com o processo de instalação do código e do simulador, faltando estudar o código em profundidade para iniciar os planos de otimização.
 
-\section{Estudo do movimento de servomotores de posição}
+\section{Estudo da influênca da redução na matriz de inércia}
 
-Usualmente, no controle em alto nível, usa-se o modelo do pêndulo invertido com o centro de massa do robô \cite{kajita2001}, de modo a simplificar a previsão do movimento. Por outro lado, em malhas a mais baixo nível, utilizam-se modelos mais fiéis, considerando cada membro do robô como um manipulador. Com os diversos servomotores distribuídos nas jutas, surgem efeitos inérciais por gravidade e força de coriolis.
+Usualmente, no controle em alto nível, usa-se o modelo do pêndulo invertido com o centro de massa do robô \cite{kajita2001}, de modo a simplificar a previsão do movimento. Por outro lado, em malhas a mais baixo nível, utilizam-se modelos mais fiéis, considerando cada membro do robô como um manipulador. Com os diversos servomotores distribuídos nas jutas, surgem efeitos inerciais por gravidade e força de coriolis \cite{craig1986, siciliano2008}.
 
-Na consideração dos movimentos relativos, usualmente na literatura e em simuladores (como no Gazebo, que utilizar-se-á na pesquisa) adota-se um modelo simplificado, que ignora um termo de primeira ordem na transferência do motor em juntas móveis (razão da velocidade angular de entrada com a de saída, referente ao conjunto de engrenagens em cada motor), que, na aplicação de robôs humanoide, pode ser uma aproximação inadequada.
+Na consideração dos movimentos relativos, usualmente na literatura e em simuladores (como no Gazebo \cite{1389727}, que utilizar-se-á na pesquisa) adota-se um modelo simplificado, que ignora os termos de inércia gerado pelos motores, que podem ser particularmente grandes dada a alta razão de redução dos motores (razão da velocidade angular de entrada com a de saída, referente ao conjunto de engrenagens em cada motor). Esta aproximação é inadequada nas aplicações de caminhada humanoide.
 
-Por esse motivo, buscou-se estudar a dedução completa da equação do manipulador, de modo a entender como melhor simular o movimento do robô, ou prever as discrepâncias do modelo simulado com o robô real.
+Por esse motivo, buscou-se estudar a dedução completa da equação do manipulador, de modo a entender como melhor simular o movimento do robô, ou prever as discrepâncias do modelo simulado com o robô real. Esta modelagem é especialmente útil, visto que o robô humanoide pode ser considerado um manipulador completamente atuado se seu \textit{zero moment point} (ZMP) estiver dentro do polígono de suporte. Neste caso, considera-se que o pé do robô está preso no solo. 
 
+O ZMP é um conceito popular na literatura de caminhada, sendo o ponto no qual pode-se considerar que as forças de reação devem atuar para equilibrar o mecanísmo bípede \cite{vukobratovic2004}. Quando o ZMP está dentro do polígono de suporte, este coincide com o centro de pressão da base.
 \subsection{Equação do manipulador}
 
-Estudando-se o caso plano da conexão de dois braços mecânicos, com motores em cada uma de suas juntas, é possível observar a dependência em primeira ordem da redução do segundo motor (que está em base acelerada). A dedução para o caso geral em três dimensões, estendido para um número qualquer de braços, pode ser visto em \cite{nasareport}. 
+Estudando-se o caso plano da conexão de dois braços mecânicos, com motores em cada uma de suas juntas, é possível observar a dependência da inércia dos motores. A dedução para o caso geral em três dimensões, estendido para um número qualquer de braços, pode ser visto em \cite{nasareport}. 
+
+Vale ressaltar que, na modelagem do robô humanoide estudado, costuma-se fazer um modelo de duas juntas para o plano coronal do robô e um modelo de três juntas para o plano sagital do robô \cite{tesemarcos}. Como os fatores a serem expostos já aparecem na modelagem com duas juntas, expõem-se apenas estes resultados. Tem-se ainda que o estudo foi feito para conhecimento, pois na prática, costuma-se deduzir as equações no grupo de pesquisa através de manipulação simbólica usando o MATLAB.
 
 \begin{figure}
 \centering
@@ -173,34 +169,34 @@ Estudando-se o caso plano da conexão de dois braços mecânicos, com motores em
 \label{fig:manipulador}
 \end{figure}
 
-Um esquema do caso estudado para este relatório, o qual já corretamente representa a situação nas juntas de robôs humanoides, pode ser visto na figura \ref{fig:manipulador}. Nela, $M_i$, $J_i$, $N_i$, $m_1$, $I_i$ e $L_i$, referem-se, respectivamente, à massa do motor $i$, momento de inércia do motor $i$, razão de transferência do motor $i$, massa da barra $i$, momento de inércia da barra $i$ em relação ao eixo passando pelo seu centro de massa e comprimento da barra $i$, para $i = 1,2$. Considerando as barras homogêneas, adota-se a relação em .
+Um esquema do caso estudado para este relatório, o qual já corretamente representa a situação nas juntas de robôs humanoides, pode ser visto na Figura \ref{fig:manipulador}. Nela, $M_i$, $J_i$, $N_i$, $m_i$, $I_i$ e $L_i$, referem-se, respectivamente, à massa do motor $i$, momento de inércia do motor $i$, razão de transferência do motor $i$, massa da barra $i$, momento de inércia da barra $i$ em relação ao eixo passando pelo seu centro de massa e comprimento da barra $i$, para $i = 1,2$. Considerando as barras homogêneas, adota-se a relação do momento de inércia das barras em \eqref{eq:inerciabarra}.
 
 \begin{equation}
 \label{eq:inerciabarra}
 I_i = \frac{m_i L_i^2}{12}.
 \end{equation}
 
-Inicialmente, observa-se que, para a modelagem, convém usar as equações de Euler-Lagrange, técnica comum na literatura de manipuladores \cite{craig1986}. Como marcado na figura \ref{fig:manipulador}, as coordenadas generalizadas adotadas serão os ângulos relativos a linha de base anterior, $q_1$ e $q_2$.
+Inicialmente, observa-se que, para a modelagem, convém usar as equações de Euler-Lagrange, técnica comum na literatura de manipuladores \cite{craig1986}. Como marcado na Figura \ref{fig:manipulador}, as coordenadas generalizadas adotadas serão os ângulos relativos às linhas de base anteriores, $q_1$ e $q_2$.
 
-Tomando os momentos de inércia das barras nos eixos em seu centro de massa, faz-se necessário descrever a velocidade do centro de massa da barra $2$ (as velocidades dos demais elementos são imediatas), descrito em \ref{eq:vg2}, em que $\vec{v}_{G_2}$ é a velocidade do centro de massa da barra $2$, $V_{M_2}$ é a velocidade do motor $2$, $\vec{k}$ é o vetor unitário normal ao plano e $\vec{r_2}$ é o vetor unitário na direção da barra $2$. Com isso, é possível calcular a energia cinética de cada elemento por \eqref{eq:encinqqer}, em que $m^{CM}$ e $I^{CM}$ são, respectivamente, a massa e momento de inércia dos centros de massa de elementos quaisquer e $\omega$ e $v^{CM}$ são, em ordem, a velocidade angular e linear no centro de massa em relação ao solo. A energia cinética total a soma da energia cinética em cada elemento. 
+Tomando os momentos de inércia das barras nos eixos em seu centro de massa, faz-se necessário descrever a velocidade do centro de massa da barra $2$ (as velocidades dos demais elementos são imediatas), descrito em \ref{eq:vg2}, em que $\vec{v}_{G_2}$ é a velocidade do centro de massa da barra $2$, $V_{M_2}$ é a velocidade do motor $2$, $\vec{k}$ é o vetor unitário normal ao plano e $\vec{r_2}$ é o vetor unitário na direção da barra $2$. Com isso, é possível calcular a energia cinética de cada elemento por \eqref{eq:encinqqer}, em que $m$ e $I^{CM}$ são, respectivamente, a massa e momento de inércia em relação ao centro de massa de um elemento qualquer e $\omega$ e $v^{CM}$ são, em ordem, a velocidade angular e linear no centro de massa em relação ao solo. A energia cinética total a soma da energia cinética em cada elemento. 
 
 
 \begin{equation}
 \label{eq:vg2}
-\vec{v}_{G_2} = \vec{v_{M_2}}+\frac{L_2}{2}(\dot{q_1}+\dot{q_2})(\vec{k} \times \vec{r_2}).
+\vec{v}_{G_2} = \vec{v_{M_2}}+\frac{L_2}{2}(\dot{q_1}+\dot{q_2})(\vec{k} \times \vec{r_2}),
 \end{equation}
 
 \begin{equation}
 \label{eq:encinqqer}
-T_i = \frac{I^{CM} (\omega)^2}{2} + \frac{m^{CM} (v^{CM})^2}{2}.
+T_i = \frac{I^{CM} (\omega)^2}{2} + \frac{m (v^{CM})^2}{2}.
 \end{equation}
 
-As energias cinética e potencial, representadas em \eqref{eq:cinetica} e \eqref{eq:potencial}, sendo $g$ a aceleração da gravidade, respectivamente, geram $L = T-V$. Das relações em\eqref{eq:lagrange}, ignorando atritos, obtém-se, por fim, as equações dinâmicas do conjunto de servomotores.
+As energias cinética e potencial, representadas em \eqref{eq:cinetica} e \eqref{eq:potencial}, sendo $g$ a aceleração da gravidade, respectivamente, geram $L = T-V$. Das relações em \eqref{eq:lagrange}, ignorando atritos, obtém-se, por fim, as equações dinâmicas do conjunto de servomotores. As equações \eqref{eq:cinetica}\--\eqref{eq:lagrange} formam o método de Lagrange.
 
 \begin{equation}
 \begin{aligned}
 \label{eq:cinetica}
-T = \frac{J_1 N_1^2 \dot{q_1}^2}{2} &+ \frac{m_1}{2}\left(\frac{dot{q_1}L_1}{2}\right)^2+\frac{1}{2}\frac{m_1 L_1^2 \dot{q_1}^2}{12}+\frac{M_2 \dot{q_2}^2 L_1^2}{2}+\frac{J_2(N_2 \dot{q_2}+\dot{q_1})}{2}\\ &+\frac{m_2 \dot{q_1}^2 L_1^2}{2} + \frac{m_2 (\dot{q_1}+\dot{q_2})^2 L_2^2}{6} + \frac{m_2 \dot{q_1}(\dot{q_1}+\dot{q_2})}{2}L_1 L_2 \cos q_2.
+T = \frac{J_1 N_1^2 \dot{q_1}^2}{2} + \frac{m_1}{2}\left(\frac{\dot{q_1}L_1}{2}\right)^2+\frac{1}{2}\frac{m_1 L_1^2 \dot{q_1}^2}{12}+\frac{M_2 \dot{q_2}^2 L_1^2}{2}&+\frac{J_2(N_2 \dot{q_2}+\dot{q_1})}{2}\\ +\frac{m_2 \dot{q_1}^2 L_1^2}{2} + \frac{m_2 (\dot{q_1}+\dot{q_2})^2 L_2^2}{6} + \frac{m_2 \dot{q_1}(\dot{q_1}+\dot{q_2})}{2} &L_1 L_2 \cos q_2.
 \end{aligned}
 \end{equation}
 \begin{equation}
@@ -213,31 +209,50 @@ V = m_1 g \frac{L_1}{2} \sin q_1 + M_2 g L_1 \sin q_1 + m_2 g \left[L_1 \sin q_1
 \frac{d}{d t}\left(\frac{\partial L}{\partial \dot{q_i}} \right) - \frac{\partial L}{\partial q_i} = 0, i = 1,2.
 \end{equation}
 
-Finalmente, obtém-se as equações do sistema dinâmico, em função de $q = [q_1 q_2]^T$, desconsiderando atritos ou entradas de torque, em \eqref{eq:dinamica}. Na matriz $\mathcal{J}$, em \eqref{eq:J}, estão destacados os termos que motivam esta dedução, que introduzem inércia em primeira ordem em $N_2$. Na literatura, com algumas excessões encontradas pelos autores \cite{siciliano,nasareport}, costuma-se desprezar estes termos, frente aos termos quadráticos de $N_1$ e $N_2$. Para diversas aplicações, como a do controle de caminhada, pode haver influência considerável destes termos \cite{nasareport}, o que motiva este estudo. 
+Finalmente, obtém-se as equações do sistema dinâmico, em função de $\mathbf{q} = [q_1\ q_2]^T$, desconsiderando atritos, sendo $\mathbf{\mathcal{T}}$ o torque de entrada, em \eqref{eq:dinamica}, equação conhecida como a equação do manipulador. Na matriz $\mathcal{J}$, destacada em vermelho na expressão de $\mathbf{B(q)}$ em \eqref{eq:bq}, em \eqref{eq:J}, estão destacados os termos que motivam esta dedução, que introduzem inércia, em segunda ordem da redução do primeiro e do segundo motor , termos $N_1^2$ e $N_2$, respectivamente, e em primeira ordem na redução do segundo motor em $N_2$. Na literatura, com algumas exceções encontradas pelos autores \cite{siciliano,nasareport}, costuma-se desprezar estes termos, considerando-se apenas a inércia dos braços mecânicos. Há particular importância nos termos de segunda ordem para a faixa de movimento da caminhada \cite{tesemarcos} e diversas outras aplicações \cite{nasareport}, o que motiva este estudo. 
 
 \begin{equation}
 \label{eq:dinamica}
-B(q) \ddot{q} + C(q, \dot{q}) \dot{q} + g(q) = 0,
+\mathbf{B(q)} \ddot{\mathbf{q}} + \mathbf{C}(\mathbf{q}, \dot{\mathbf{q}}) \dot{\mathbf{q}} + \mathbf{g(q)} = \mathbf{\mathcal{T}},
 \end{equation}
 em que:
 \begin{equation}
-B(q) = \begin{bmatrix} \frac{m_1 L_1^2 + m_2 L_2^2}{3} + m_2 L_1^2 + m_2 L_1 L_2 \cos q_2 & \frac{m_2 L_2^2}{3}+\frac{m_2 L_1 L_2 \cos q_2}{2}\\ \frac{m_2 L_2^2}{3}+\frac{m_2 L_1 L_2 \cos q_2}{2} &\frac{m_2 L_2^2}{3} \end{bmatrix} + \mathcal{J},
+\label{eq:bq}
+\mathbf{B}(\mathbf{q}) = \begin{bmatrix} \frac{m_1 L_1^2 + m_2 L_2^2}{3} + m_2 L_1^2 + m_2 L_1 L_2 \cos q_2 & \frac{m_2 L_2^2}{3}+\frac{m_2 L_1 L_2 \cos q_2}{2}\\ \frac{m_2 L_2^2}{3}+\frac{m_2 L_1 L_2 \cos q_2}{2} &\frac{m_2 L_2^2}{3} \end{bmatrix} + \textcolor{red}{\mathbf{\mathcal{J}}},
 \end{equation}
 \begin{equation}
 \label{eq:J}
-\mathcal{J} = \begin{bmatrix} M_2 L_1^2 + J_2 + J_1 N_1^2 & \textcolor{red}{J_2 N_2} \\ \textcolor{red}{J_2 N_2} & J_2 N_2^2 \end{bmatrix},
+\mathbf{\mathcal{J}} = \begin{bmatrix} M_2 L_1^2 + J_2 + J_1 N_1^2 & J_2 N_2 \\ J_2 N_2 & J_2 N_2^2 \end{bmatrix},
 \end{equation}
 \begin{equation}
-C(q,\dot{q})=m_2 L_1 L_2 \sin q_2 \begin{bmatrix} -\dot{q_2} & -1/2 \dot{q_2} \\ 1/2 \dot{q_1} & 0 \end{bmatrix},
+\mathbf{C}(\mathbf{q}, \dot{\mathbf{q}})=m_2 L_1 L_2 \sin q_2 \begin{bmatrix} -\dot{q_2} & -1/2 \dot{q_2} \\ 1/2 \dot{q_1} & 0 \end{bmatrix},
 \end{equation}
 \begin{equation}
-g(q) = g \begin{bmatrix} m_1 \frac{L_1}{2}\cos q_1 + m_2 \left(L_1 \cos q_1 + \frac{L_2}{2} \cos (q_1+q_2) \right) + M_2 L_1 \cos q_1 \\ m_2 \frac{L_2}{2} \cos (q_1+q_2) \end{bmatrix}.
+\mathbf{g(q)} = g \begin{bmatrix} m_1 \frac{L_1}{2}\cos q_1 + m_2 \left(L_1 \cos q_1 + \frac{L_2}{2} \cos (q_1+q_2) \right) + M_2 L_1 \cos q_1 \\ m_2 \frac{L_2}{2} \cos (q_1+q_2) \end{bmatrix}.
 \end{equation}
-\subsection{Estensão do modelo para um robô humanoide}
+\subsection{Extensão do modelo para um robô humanoide}
 Embora a dedução tenha sido feita para apenas dois membros, é possível estender o modelo para o robô como um todo. Utiliza-se esta modelagem para uma malha de controle em baixo nível com ganhos constantes, de modo que não se faz necessário resolver o problema a tempo de iteração.
+
 \subsection{Compensador de orientação do torso}
 
-Como mencionado, a malha de controle da caminhada costuma ser dividida em níveis. No presente projeto, o estudo da equação do manipulador será utilizado para o projeto de um compensador da orientação do torso, marcado em vermelho na figura \ref{FIG: doc manga}, adaptada de \cite{tesemarcos}, da malha de controle da caminhada. Trata-se de um controlador P-V, proporcional
+Como mencionado, a malha de controle da caminhada costuma ser dividida em níveis. O Chape 1ª Geração conta com duas estratégias principais, conforme evidenciado nos blocos "Compensador de Gravidade" e "Compensador de Orientação de Torso" apresentados na Figura \ref{FIG: doc manga}. A gravidade cria torques indesejados nas juntas do robô, o que impede que os controladores de posição dos servomotores atinjam suas referências. Entretanto, é possível calcular os valores desses torques usando o modelo de massa do robô e compensá-los através de \emph{feedforward}. O modelo de massa do robô pode ser obtido através de informações de modelos de \emph{computer-aided design} (CAD). 
+
+Apesar do compensador de gravidade, ainda surgem erros de orientação do torso. Além de inevitáveis erros no modelo de massa, o que impede uma compensação perfeita da gravidade, efeitos de perturbações (por conta de empurrões e desníveis no solo) e de dinâmica dos atuadores contribuem para erros de orientação.
+
+No presente projeto, o estudo da equação do manipulador será utilizado para o projeto de um compensador da orientação do torso, marcado em vermelho na Figura \ref{FIG: doc manga}, adaptada de \cite{tesemarcos}, da malha de controle da caminhada. 
+
+O compensador de orientação implementado no Chape usa controladores P+V desacoplados para os canais de rolagem e arfagem. Para estimar a orientação do torso, usa-se um filtro de Kalman estendido (EKF) que funde informações do acelerômetro e do girômetro da unidade inercial presente no torso, estratégia implementada em \cite{tesemarcos}. Ao invés de derivar as estimativas de ângulo, usa-se medidas de velocidade angular do girômetro para evitar amplificação de ruído. As seguintes juntas são consideradas nesse controlador: coxa-arfagem, joelho-arfagem, calcanhar-arfagem, coxa-rolamento e calcanhar-rolagem. Como nosso robô é controlado por posição, o controlador comanda deslocamento de posição:
+\begin{align}
+\Delta \theta_{hr,o} = -K_{p,hr} \left( \phi_d - \phi \right) - K_{v,hr} p, \\
+\Delta \theta_{ar,o} = -K_{p,ar} \left( \phi_d - \phi \right) - K_{v,ar} p, \\
+\Delta \theta_{hp,o} = -K_{p,hp} \left( \theta_d - \theta \right) - K_{v,hp} q, \\
+\Delta \theta_{kp,o} = -K_{p,kp} \left( \theta_d - \theta \right) - K_{v,kp} q, \\
+\Delta \theta_{ap,o} = -K_{p,ap} \left( \theta_d - \theta \right) - K_{v,ap} q,
+\end{align}
+em que \( \phi_d \) e \( \theta_d \) são ângulos desejados de rolamento e arfagem, respectivamente; \( \phi \) e \( \theta \) são ângulos atuais de rolamento e arfagem, respectivamente; \( p \) e \( q \) são velocidades angulares de rolamento e arfagem, respectivamente; os índices \( hr \), \( ar \), \( hp \), \( kp \) e \( ap \) referem-se a coxa-rolamento, calcanhar-rolamento, coxa-arfagem, joelho-arfagem e calcanhar-arfagem, respectivamente; \( K_{p,*} \) e \( K_{v,*} \) representam ganhos proporcionais e derivativos de cada junta, respectivamente; finalmente, \( \Delta \theta_{*,o} \) representa o comando de deslocamento (\emph{offset}) de cada junta.
+
+Vale ressaltar que, para determinar os ganhos, lineariza-se o modelo não lienar das equações do manipulador em torno de uma postura nominal (robô com velocidade zero no meio da fase de duplo suporte) \cite{tesemarcos}. A linearização é realizada pelo método de pequenos sinais \cite{franklin2013}. Como exposto, consideram-se dois manipuladores robóticos desacoplados, um para o plano sagital (arfagem) e outro para o plano coronal (rolamento). É projetado um controlador SISO para cada junta de modo a respeitar restrições de interesse (banda passante e margem de fase, discutidas na seção \ref{sec:malha}.
+
 \begin{figure} 
 	\centering
 	\includegraphics[angle=90, height = 0.9\vsize]{figures/walking_engine_overview.eps}
@@ -245,15 +260,15 @@ Como mencionado, a malha de controle da caminhada costuma ser dividida em nívei
 	\label{FIG: doc manga}
 \end{figure} 
 
-A malha de controle do primeiro robô Chape, do LAB-SCA, levou em consideração correções feitas por testes, referente a falha na utilização do modelo de simulador Gazebo para a aplicação de redução nos motores, pois, como mencionado, este, por padrão, ignora o termo linear da razão de redução.
+A malha de controle do primeiro robô Chape, do LAB-SCA, foi projetada com base em um modelo matemático para o modelo do simulador Gazebo. Porém, sua transferência para o robô real foi realizado por ajustes manuais devido à falta de tempo. Destaca-se que o modelo de simulação e o robô real atualmente possuem diferenças dinâmicas, como relatado em \cite{tesemarcos}.
 
-Assim, estuda-se esta modelagem como possível candidata a otimização da malha de controle atual e a sua completa aplicação no novo robô humanoide Chape, segunda geração. Uma correta aplicação no projeto simulado e na determinação dos ganhos do controlador deve proporcionar melhor resposta em algumas faixas do movimento.
+Assim, estuda-se esta modelagem como possível candidata à otimização da malha de controle atual e a sua completa aplicação no novo robô humanoide Chape, segunda geração. Uma correta aplicação no projeto simulado e na determinação dos ganhos do controlador deve proporcionar melhor resposta em algumas faixas do movimento.
 
 \section{Algoritmos de otimização}
 
-Com a malha de controle em baixo nível do compensador do torso, faz-se necessário otimizar os ganhos do controlador P+V utilizado. No projeto do robô Chape de segunda geração, será necessário reestudar os ganhos já projetados para o modelo anterior.
+Com a malha de controle em baixo nível do compensador do torso, faz-se necessário otimizar os ganhos do controlador P+V utilizado. No projeto do robô Chape de segunda geração, será necessário reprojetar os ganhos já projetados para o modelo anterior.
 
-Para todas as etapas do controlador, em geral, realizam-se otimizações de modo a minimizar uma função custo do controlador. A função será escolhida segundo métodos já conhecidos, e minimizar a função custo costuma ser o objetivo da otimização. O problema é montado, de forma genérica, na relação \eqref{eq:min}, em que $g_i$ e $h_j$ são as restrições em desigualdade e igualdade que o sistema exige. Uma restrição, por exemplo, pode ser a faixa de atuação dos servomotores de um manipulador com barreiras físicas em seu movimento.
+Para todas as etapas do controlador, em geral, realizam-se otimizações de modo a minimizar uma função custo do controlador. A função será escolhida segundo métodos já conhecidos, e minimizar a função custo costuma ser o objetivo da otimização. O problema é montado, de forma genérica, na relação \eqref{eq:min}, em que $g_i$ e $h_j$ são as restrições em desigualdade e igualdade que o sistema exige.
 
 \begin{equation}
 \label{eq:min}
@@ -264,21 +279,23 @@ Para todas as etapas do controlador, em geral, realizam-se otimizações de modo
 \end{aligned}
 \end{equation}
 
-Há diversos algoritmos de minimização de funções, podendo envolver ou não restrições. O escolhido para esta aplicação é o algoritmo simplex, ou Nelder-Mead, que funciona baseado em uma busca por mínimos com a variação de politopos em torno do estado em cada iteração de forma heurística \cite{NoceWrig06}.
+O uso de algoritmos de otimização é necessário, pois o modelo dinâmico linear é complexo, com alta ordem, principalmente se forem considerados os efeitos do atraso introduzido pelo uso de controlador digital. Há diversos algoritmos de minimização de funções, podendo envolver ou não restrições. O escolhido para esta aplicação é o algoritmo simplex, ou Nelder-Mead \cite{lagarias1998}, que funciona baseado em uma busca por mínimos com a variação de politopos em torno do estado em cada iteração de forma heurística \cite{NoceWrig06}.
 
 \subsection{Uso do algoritmo simplex}
 
-A função fminsearch utiliza o algoritmo simplex e se mostra adequado para a complexidade das malhas de controle na qual será utilizado. A única ressalva a ser feita é a sua sensibilidade ao ponto inicial $x_0$ passado. Costuma-se cair em mínimos locais da função custo, dado um $x_0$ muito longe do ótimo.
+A função \textit{fminsearch} do MATLAB utiliza o algoritmo simplex e se mostra adequado para a complexidade das malhas de controle na qual será utilizado. A única ressalva a ser feita é a sua sensibilidade ao ponto inicial $x_0$ passado. Costuma-se cair em mínimos locais da função custo, dado um $x_0$ muito longe do ótimo.
 
 Uma estratégia a ser utilizada é a solução de modelos mais simples, que possam ser resolvidos de forma analítica. Havendo o $x^*$ ótimo para esse problema simplificado, pode-se adotar $x_0 = x^*$ como chute inicial.
 
-Como já existe uma solução prévia para o problema, no robô Chape. A otimização de um código modificado neste robô ou a implementação do código para a segunda geração Chape já possui um chute inicial dos ganhos P+V utilizados atualmente.
+A otimização de um código modificado no primeiro robô Chape ou a implementação do código para a segunda geração Chape terá chute inicial para os ganhos P+V com base em uma simplificação do modelo completo do robô para um sistema de segunda ordem com solução analítica.
 
 \subsection{Aplicação em malha de corrente}
+\label{sec:malha}
+Para exercitar a aplicação, foi estudado o modelo de um servomotor de posição genérico \cite{max27} com malha de corrente. Para a malha de corrente, a ideia era implementar, por meio do método de projetos em frequência, um controlador do tipo Lead combinado em série com um integrador. Foi considerado além da planta o efeito de atraso da discretização, havendo realimentação unitária.
 
-Para exercitar a aplicação, foi estudado o modelo de um servomotor de posição genérico \cite{max27} com malha de corrente. Para a malha de corrente, a ideia era implementar, por meio do método de projetos em frequência, um controlador do tipo Lead combinado em série com um integrador. Foi considerado além da planta o efeito de atraso da discretização e o controle, havendo retorno unitário.
+Para isso, inicialmente foi resolvido o problema analítico da planta simplificada. Então, com o ponto original para a otmização, aplicou-se a função \textit{fminsearch} na função de ganho $J(x)$ apresentada em \eqref{eq:ganhocorrente}, em que $K$ representa de forma genérica as constantes do controlador e $\omega_b^d$ e $PM^d$ são, respectivamente, a banda passante (BW) e a margem de fase (PM) desejados no projeto, enquanto $\omega_b(K)$ é a banda passante para $K$ atual na iteração  e $PM(K)$, a fase de margem. 
 
-Para isso, inicialmente foi resolvido o problema analítico da planta simplificada. Então, com o ponto original para a otmização, aplicou-se a função fminsearch na função de ganho $J(x)$ apresentada em \eqref{eq:ganhocorrente}, em que $K$ representa de forma genérica as constantes do controlador e $\omega_b^d$ e $PM^d$ são, respectivamente, a banda passante e a margem de fase desejados no projeto, enquanto $\omega_b(K)$ é a banda passante para $K$ atual na iteração  e $PM(K)$, a fase de margem.
+Tanto PM como BW são parâmetros comuns na caracterização de sistemas de controle, sendo o primeiro a frequência na qual o ganho (na resposta em frequência) cai para $3$ $dB$ em relação ao seu valor na frequência de $0$ $Hz$, enquanto o segundo é a diferença entre a fase do sistema na frequência de corte (definida como a frequência na qual o ganho é $0$ $dB$) e $-180^0$. Costuma-se associar BW com a velocidade de resposta no sistema e PM com o amortecimento e a estabilidade \cite{ogata2010}. 
 
 \begin{equation}
 \label{eq:ganhocorrente}
@@ -289,11 +306,11 @@ A formulação desta função de custo na forma quadrática já foi suficiente p
 
 \section{Plano de trabalho e cronograma para as etapas seguintes}
 
-Seguindo-se as etapas restantes, espera-se focar boa parte do trabalho no período de férias de graduação do aluno, período compreendido de dezembro de 2020 a março de 2021. 
+Com a pandemia, o Instituto Tecnológico de Aeronáutica (ITA) adotou no ano de 2020 ensino a distância, o que intensificou a exigência em novos aspectos e, junto a um cronograma alterado, resultou numaa dedicação a iniciação científica com menos intensidade que o esperado, principalmente dado que o período de férias foi reduzido no meio do ano e postergado no final. Seguindo-se as etapas restantes, espera-se focar boa parte do trabalho no período de férias de graduação do aluno, período compreendido de dezembro de 2020 a março de 2021. 
 
-Como mencionado, o principal objeto de estudo para otimização estão na malha em baixo nível, dos ganhos obtidos da otimização do controlador P+V do compensador de orientação do torso. O foco do estudo, portanto, será nesses aspectos, iniciando por um estudo a fundo do código atual do robô Chape, da implementação do controle e determinação dos ganhos.
+Como mencionado, o principal objeto de estudo para otimização está na malha em baixo nível, dos ganhos obtidos da otimização do controlador P+V do compensador de orientação do torso. O foco do estudo, portanto, será nesses aspectos, iniciando por um estudo a fundo do código atual do robô Chape, da implementação do controle e determinação dos ganhos.
 
-Pretende-se seguir o cronograma e atividades a seguir, com pequenas modificações no foco quanto ao proposto inicialmente:
+Pretende-se seguir o cronograma e atividades a seguir:
 
 \begin{enumerate}[A]
 \item{Estudo detalhado do código do robô humanoide relacionado ao seu caminhar e organização do código;}

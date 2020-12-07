@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.10)  6 DEC 2020 23:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.10)  7 DEC 2020 18:51
 entering extended mode
 **./Relatorio_parcial_Fapesp.tex
 (Relatorio_parcial_Fapesp.tex
@@ -722,7 +722,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (2.08075pt too wide) in paragraph at lines 82--83
+Overfull \hbox (2.08075pt too wide) in paragraph at lines 79--80
 \OT1/cmr/m/n/10.95 Esse tra-ba-lho sera re-a-li-zado no La-bo-ratorio de Sis-
 te-mas Com-pu-ta-ci-o-nais Aut^onomos
  []
@@ -734,90 +734,97 @@ te-mas Com-pu-ta-ci-o-nais Aut^onomos
 \tf@toc=\write4
 \openout4 = `Relatorio_parcial_Fapesp.toc'.
 
- [2] [3] [4]
+ [2] [3]
+Overfull \hbox (3.94989pt too wide) in paragraph at lines 150--150
+[]\OT1/cmr/bx/n/17.28 Estudo da in-flu^enca da reduc~ao na ma-triz de inercia
+ 
+ []
+
+[4]
 Package epstopdf Info: Source file: <figures/manipulador.eps>
-(epstopdf)                    date: 2020-12-06 14:29:27
-(epstopdf)                    size: 60710 bytes
+(epstopdf)                    date: 2020-12-07 18:42:17
+(epstopdf)                    size: 57230 bytes
 (epstopdf)             Output file: <figures/manipulador-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-12-06 15:02:52
-(epstopdf)                    size: 19267 bytes
+(epstopdf)                    date: 2020-12-07 18:42:26
+(epstopdf)                    size: 19404 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/manipulador-eps-con
 verted-to.pdf figures/manipulador.eps>
-(epstopdf)             \includegraphics on input line 171.
+(epstopdf)             \includegraphics on input line 167.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/manipulador-eps-converted-to.pdf): PDF
  inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/manipulador-eps-converted-to.pdf, id=19, 182.6825pt x 115.43124pt>
+<figures/manipulador-eps-converted-to.pdf, id=19, 181.67876pt x 104.39pt>
 File: figures/manipulador-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/manipulador-eps-converted-to.pdf>
 Package pdftex.def Info: figures/manipulador-eps-converted-to.pdf  used on inpu
-t line 171.
-(pdftex.def)             Requested size: 226.48395pt x 143.11563pt.
-[5 <./figures/manipulador-eps-converted-to.pdf>]
-LaTeX Font Info:    Trying to load font information for U+eus on input line 216
+t line 167.
+(pdftex.def)             Requested size: 226.48395pt x 130.1383pt.
+[5] [6 <./figures/manipulador-eps-converted-to.pdf>]
+LaTeX Font Info:    Trying to load font information for U+eus on input line 212
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\ueus.fd"
 File: ueus.fd 2013/01/14 v3.01 Euler Script
-) [6]
+) [7] [8] [9]
 Package epstopdf Info: Source file: <figures/walking_engine_overview.eps>
-(epstopdf)                    date: 2020-12-06 19:39:35
-(epstopdf)                    size: 277296 bytes
+(epstopdf)                    date: 2020-12-07 15:42:32
+(epstopdf)                    size: 276612 bytes
 (epstopdf)             Output file: <figures/walking_engine_overview-eps-conver
 ted-to.pdf>
-(epstopdf)                    date: 2020-12-06 19:47:00
-(epstopdf)                    size: 81680 bytes
+(epstopdf)                    date: 2020-12-07 15:43:09
+(epstopdf)                    size: 81474 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/walking_engine_over
 view-eps-converted-to.pdf figures/walking_engine_overview.eps>
-(epstopdf)             \includegraphics on input line 243.
+(epstopdf)             \includegraphics on input line 258.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/walking_engine_overview-eps-converted-
 to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
 wed
-<figures/walking_engine_overview-eps-converted-to.pdf, id=34, 807.015pt x 361.3
+<figures/walking_engine_overview-eps-converted-to.pdf, id=48, 807.015pt x 361.3
 5pt>
 File: figures/walking_engine_overview-eps-converted-to.pdf Graphic file (type p
 df)
 <use figures/walking_engine_overview-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_engine_overview-eps-converted-to.pdf  
-used on input line 243.
+used on input line 258.
 (pdftex.def)             Requested size: 807.01303pt x 361.34912pt.
-[7] [8] [9 <./figures/walking_engine_overview-eps-converted-to.pdf>] [10]
-[11] [12] [13] (Relatorio_parcial_Fapesp.aux)
+[10] [11 <./figures/walking_engine_overview-eps-converted-to.pdf>] [12]
+[13] [14] [15] [16] (Relatorio_parcial_Fapesp.aux)
 Package logreq Info: Writing requests to 'Relatorio_parcial_Fapesp.run.xml'.
 \openout1 = `Relatorio_parcial_Fapesp.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13560 strings out of 480934
- 233830 string characters out of 2909673
- 723584 words of memory out of 3000000
- 29219 multiletter control sequences out of 15000+200000
- 543774 words of font info for 68 fonts, out of 3000000 for 9000
+ 13596 strings out of 480934
+ 234795 string characters out of 2909673
+ 723929 words of memory out of 3000000
+ 29252 multiletter control sequences out of 15000+200000
+ 544732 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,12n,48p,899b,1771s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 50i,12n,48p,1093b,1771s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Reynaldo\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi6
-00\tcrm1095.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on Relatorio_parcial_Fapesp.pdf (13 pages, 295675 bytes).
+00\tcrm1200.pk> <C:\Users\Reynaldo\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkn
+appen/ec/dpi600\tcrm1095.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm10.pfb>
+Output written on Relatorio_parcial_Fapesp.pdf (16 pages, 311723 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
