@@ -1,0 +1,23 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {brazil}{}
+\babel@toc {brazil}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Resumo do plano inicial}{3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Resumo das etapas realizadas}{4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Estudo do movimento de servomotores de posição}{4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Equação do manipulador}{5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Estensão do modelo para um robô humanoide}{7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Compensador de orientação do torso}{8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Algoritmos de otimização}{8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Uso do algoritmo simplex}{10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Aplicação em malha de corrente}{10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Plano de trabalho e cronograma para as etapas seguintes}{11}%
