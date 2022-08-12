@@ -1,0 +1,340 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{kajita2001}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=KS}{%
+         family={Kajita},
+         familyi={K\bibinitperiod},
+         given={Shuuji},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KF}{%
+         family={Kanehiro},
+         familyi={K\bibinitperiod},
+         given={Fumio},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kaneko},
+         familyi={K\bibinitperiod},
+         given={Kenji},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=YK}{%
+         family={Yokoi},
+         familyi={Y\bibinitperiod},
+         given={Kazuhito},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Hirukawa},
+         familyi={H\bibinitperiod},
+         given={Hirohisa},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KSKFKK+1}
+    \strng{fullhash}{KSKFKKYKHH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proc. Int. Conf. Intelligent Robots and Systems}
+    \field{pages}{239 \bibrangedash  246}
+    \field{title}{{The 3D Linear Inverted Pendulum Mode: A simple modeling for
+  a biped walking pattern generation}}
+    \list{location}{1}{%
+      {Maui, EUA}%
+    }
+    \field{year}{2001}
+  \endentry
+
+  \entry{tesemarcos}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=dAMMRO}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Albuquerque\bibnamedelima Maximo},
+         familyi={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={Marcos Ricardo\bibnamedelima Omena},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AMMROd1}
+    \strng{fullhash}{AMMROd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Automatic walking step duration through model predictive
+  control}}
+    \list{institution}{1}{%
+      {Instituto Tecnol\'{o}gico de Aeron\'{a}utica}%
+    }
+    \field{type}{Tese de Doutorado}
+    \field{year}{2017}
+  \endentry
+
+  \entry{franklin2013}{book}{}
+    \name{author}{3}{}{%
+      {{hash=FGF}{%
+         family={Franklin},
+         familyi={F\bibinitperiod},
+         given={Gene\bibnamedelima F.},
+         giveni={G\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=PJD}{%
+         family={Powell},
+         familyi={P\bibinitperiod},
+         given={J.\bibnamedelima David},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=ENA}{%
+         family={Emami-Naeini},
+         familyi={E\bibinithyphendelim N\bibinitperiod},
+         given={Abbas},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Bookman}%
+    }
+    \strng{namehash}{FGFPJDENA1}
+    \strng{fullhash}{FGFPJDENA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{6th}
+    \field{isbn}{978-85-8260-067-2}
+    \field{title}{Sistemas de Controle para Engenharia}
+    \field{year}{2013}
+  \endentry
+
+  \entry{vukobratovic2004}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VM}{%
+         family={Vukobratovi\'{c}},
+         familyi={V\bibinitperiod},
+         given={Miomir},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BB}{%
+         family={Borovac},
+         familyi={B\bibinitperiod},
+         given={Branislav},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VMBB1}
+    \strng{fullhash}{VMBB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{157 \bibrangedash  173}
+    \field{title}{{Zero-Moment Point -- Thirty Five Years of Its Life}}
+    \field{volume}{1}
+    \field{journaltitle}{Int. J. Humanoid Robots}
+    \field{year}{2004}
+  \endentry
+
+  \entry{tedrake2005}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CSH}{%
+         family={Collins},
+         familyi={C\bibinitperiod},
+         given={Steven\bibnamedelima H.},
+         giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Ruina},
+         familyi={R\bibinitperiod},
+         given={Andy},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Tedrake},
+         familyi={T\bibinitperiod},
+         given={Russ},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wisse},
+         familyi={W\bibinitperiod},
+         given={Martijn},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CSHRATR+1}
+    \strng{fullhash}{CSHRATRWM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{5712}
+    \field{pages}{1082 \bibrangedash  1085}
+    \field{title}{{Efficient bipedal robots based on passive-dynamic walkers}}
+    \field{volume}{307}
+    \field{journaltitle}{Science}
+    \field{year}{2005}
+  \endentry
+
+  \entry{1389727}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=KN}{%
+         family={{Koenig}},
+         familyi={K\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={{Howard}},
+         familyi={H\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KNHA1}
+    \strng{fullhash}{KNHA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2004 IEEE/RSJ International Conference on Intelligent
+  Robots and Systems (IROS) (IEEE Cat. No.04CH37566)}
+    \verb{doi}
+    \verb 10.1109/IROS.2004.1389727
+    \endverb
+    \field{pages}{2149\bibrangedash 2154 vol.3}
+    \field{title}{Design and use paradigms for Gazebo, an open-source
+  multi-robot simulator}
+    \field{volume}{3}
+    \field{year}{2004}
+  \endentry
+
+  \entry{boost}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=SB}{%
+         family={Software},
+         familyi={S\bibinitperiod},
+         given={Boost},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SB1}
+    \strng{fullhash}{SB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://www.boost.org/}}
+    \field{title}{Boost C++ Libraries}
+    \field{year}{2011}
+  \endentry
+
+  \entry{tesemarcosmestr}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=dAMMRO}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Albuquerque\bibnamedelima Maximo},
+         familyi={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={Marcos Ricardo\bibnamedelima Omena},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AMMROd1}
+    \strng{fullhash}{AMMROd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Omnidirectional ZMP-Based Walking for a Humanoid Robot}}
+    \list{institution}{1}{%
+      {Instituto Tecnol\'{o}gico de Aeron\'{a}utica}%
+    }
+    \field{type}{Dissertation of Master of Science}
+    \field{year}{2015}
+  \endentry
+
+  \entry{10.5555/1965405}{book}{}
+    \name{author}{4}{}{%
+      {{hash=SB}{%
+         family={Siciliano},
+         familyi={S\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Sciavicco},
+         familyi={S\bibinitperiod},
+         given={Lorenzo},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=VL}{%
+         family={Villani},
+         familyi={V\bibinitperiod},
+         given={Luigi},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=OG}{%
+         family={Oriolo},
+         familyi={O\bibinitperiod},
+         given={Giuseppe},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Publishing Company, Incorporated}%
+    }
+    \strng{namehash}{SBSLVL+1}
+    \strng{fullhash}{SBSLVLOG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{1849966346}
+    \field{title}{Robotics: Modelling, Planning and Control}
+    \field{year}{2010}
+  \endentry
+
+  \entry{parcial}{report}{}
+    \name{author}{2}{}{%
+      {{hash=dLRS}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Lima},
+         familyi={L\bibinitperiod},
+         given={Reynaldo\bibnamedelima Santos},
+         giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=dAMMRO}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Albuquerque\bibnamedelima Maximo},
+         familyi={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={Marcos Ricardo\bibnamedelima Omena},
+         giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LRSdAMMROd1}
+    \strng{fullhash}{LRSdAMMROd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Relatório Parcial de Atividades: Controle de Estabilização
+  de Caminhada de Robô Humanoide, Bolsa de Iniciação Científica
+  2020/04559-6}
+    \list{institution}{1}{%
+      {Laboratório de Sistemas Computacionais Autônomos, Instituto
+  Tecnológico de Aeronáutica}%
+    }
+    \field{type}{techreport}
+    \field{month}{12}
+    \field{year}{2020}
+  \endentry
+\enddatalist
+\endinput

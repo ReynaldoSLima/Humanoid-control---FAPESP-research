@@ -1,0 +1,17 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {brazil}{}
+\babel@toc {brazil}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Resumo do plano inicial}{3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Resumo das etapas realizadas}{4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Código de estabilização de caminhada}{4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Reestruturação na obtenção de parâmetros}{8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Plano sagital: projeto de ganhos dos controladores}{9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Plano coronal: projeto de ganhos dos controladores}{12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Conclusão e trabalhos futuros}{13}%
